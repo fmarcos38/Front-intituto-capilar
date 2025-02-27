@@ -1,0 +1,52 @@
+.navbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
+    height: 70px;
+    background-color: var(--fondo-navbar);
+    transition: all 0.4s ease-in-out;
+    z-index: 1000;
+    left: 0; /* Evita que se mueva con el scroll horizontal */
+    top: 0; /* Se mantiene siempre en la parte superior */
+}
+
+/* Estilos cuando el usuario hace scroll */
+.scrolled {
+    background-color: var(--fondo-navbar);
+    animation: slideDown 0.4s forwards;
+}
+
+/* Animación de entrada */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Evitar desbordamiento horizontal */
+body, html {
+    overflow-x: hidden;
+    width: 100vw; /* Asegura que el contenido no genere desplazamiento horizontal */
+}
+
+/* Responsive: navbar fija en móviles */
+@media screen and (max-width: 500px) {
+    .navbar {
+        position: fixed; /* Se mantiene fija en móviles */
+        background-color: var(--fondo-navbar);
+        top: 0;
+        left: 0;
+        width: 100vw; /* Se asegura de ocupar todo el ancho */
+    }
+
+    /* Corrige el desbordamiento horizontal */
+    body {
+        overflow-x: hidden;
+    }
+}

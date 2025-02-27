@@ -1,0 +1,14 @@
+:root {
+  --fondo-page: white;
+  --fondo-navbar: rgb(87, 213, 62);
+  --color-fuente: white;
+}
+
+.page {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: var(--fondo-page);
+}
