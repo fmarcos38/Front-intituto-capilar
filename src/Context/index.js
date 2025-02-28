@@ -5,24 +5,7 @@ export const AppContext = createContext();
 //creo el provider
 export const AppProvider = ({ children }) => {
     
-    const [dataUser, setDataUser] = React.useState({
-        id: "67b34591bd4463d630bec340",
-        nombre: "marcos",
-        apellido: "forastiere",
-        dni: 29979518,
-        email: "fmarcos_23@hotmail.com",
-        telefono: {
-            area: 2281,
-            numero: 460124
-        },
-        direccion: {
-            codigoPostal: 123,
-            calle: "pepe",
-            nunmero: 321
-        },
-        favoritos: [],
-        isAdmin: true
-    }); //estado data user
+    const [dataUser, setDataUser] = React.useState({}); //estado data user
     const [carritoModal, setCarritoModal] = React.useState(false); //estado modal carrito
     const [recuperaDatosModal, setRecuperaDatosModal] = React.useState(false); //estado modal recupera datos
     
@@ -35,12 +18,12 @@ export const AppProvider = ({ children }) => {
     
 
     //efecto para verificar si hay usuario logueado
-    /* useEffect(() => {
+    useEffect(() => {
         const data = JSON.parse(localStorage.getItem('dataUser'));
         if(data){
             setDataUser(data);
         }
-    }, []); */
+    }, []);
     
     return (
         <AppContext.Provider value={{
@@ -56,3 +39,25 @@ export const AppProvider = ({ children }) => {
         </AppContext.Provider>
     );
 };
+
+/*
+
+id: "67b34591bd4463d630bec340",
+        nombre: "marcos",
+        apellido: "forastiere",
+        dni: 29979518,
+        email: "fmarcos_23@hotmail.com",
+        telefono: {
+            area: 2281,
+            numero: 460124
+        },
+        direccion: {
+            codigoPostal: 123,
+            calle: "pepe",
+            nunmero: 321
+        },
+        favoritos: [],
+        isAdmin: true
+
+
+*/

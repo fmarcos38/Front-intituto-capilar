@@ -89,28 +89,28 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                 {/* menú Admin */}
                 {
                     usuario?.isAdmin && (
-                        <ul className='ul-nav-med'>
-                        <li
-                            className='navbar-item-admin'
-                            onMouseEnter={handleMouseEnterAdmin}
-                            onMouseLeave={handleMouseLeaveAdmin}
-                        >
-                            Admin
-                            {/* menú admin */}
-                            {
-                                muestraMenuAdmin && (
-                                    <ul className='dropdown-menu-admin'>
-                                        <li className='dropdown-item-admin'>
-                                            <NavLink to='/admin/creaProd' className='link-navbar-admin'>Crea Producto</NavLink>
-                                        </li>
-                                        <li className='dropdown-item-admin'>
-                                            <NavLink to='/admin/listaProdsAdmin' className='link-navbar-admin'>Lista Producto</NavLink>
-                                        </li>
-                                    </ul>
-                                )
-                            }
-                        </li>
-                        </ul>
+                            <ul className='ul-nav-med'>
+                                <li
+                                    className='navbar-item-admin'
+                                    onMouseEnter={handleMouseEnterAdmin}
+                                    onMouseLeave={handleMouseLeaveAdmin}
+                                >
+                                    Admin
+                                    {/* menú admin */}
+                                    {
+                                        muestraMenuAdmin && (
+                                            <ul className='dropdown-menu-admin'>
+                                                <li className='dropdown-item-admin'>
+                                                    <NavLink to='/admin/creaProd' className='link-navbar-admin'>Crea Producto</NavLink>
+                                                </li>
+                                                <li className='dropdown-item-admin'>
+                                                    <NavLink to='/admin/listaProdsAdmin' className='link-navbar-admin'>Lista Producto</NavLink>
+                                                </li>
+                                            </ul>
+                                        )
+                                    }
+                                </li>
+                            </ul>
                     )
                 }
                 {/* regist/log */}
