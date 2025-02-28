@@ -1,0 +1,28 @@
+.cont-politicas-cambio{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.titulo-politicas{
+    text-align: center;
+}
+.texto-politicas-cambio{
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    text-align: justify;
+}
+/* responsive */
+@media screen and (max-width: 768px){
+    .cont-politicas-cambio{
+        width: 100%;
+    }
+    .texto-politicas-cambio{
+        font-size: 16px;
+    }
+}

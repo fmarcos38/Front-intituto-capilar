@@ -6,7 +6,7 @@
     align-items: center;
     width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
     height: 70px;
-    background-color: var(--fondo-navbar);
+    background-color: rgba(192, 245, 176, 0.651);
     transition: all 0.4s ease-in-out;
     z-index: 1000;
     left: 0; /* Evita que se mueva con el scroll horizontal */

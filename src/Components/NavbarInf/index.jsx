@@ -49,46 +49,46 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                 </div>
 
                 <div className='col-2-navbarInf'>
-                    <ul className='ul-navbarInf'>
-                        <li data-translate>Tratamientos</li>
-                        <li data-translate>Productos</li>
-                        <li data-translate>Testimonios</li>
-                        <li data-translate>Nosotros</li>
-                        <li data-translate>Contacto</li>
+                    <ul className='ul-navbar-Inf'>
+                        <li className='item-nav'>Tratamientos</li>
+                        <li className='item-nav'>Productos</li>
+                        <li className='item-nav'>Testimonios</li>
+                        <li className='item-nav'>Nosotros</li>
+                        <li className='item-nav'>Contacto</li>
                     </ul>
                 </div>
 
                 {/* regist, log, carrito, fav */}
-            <div className='col-3-navbarInf'>
-                <div className='cont-registrate'>
+                <div className='col-3-navbarInf'>
+                    <div className='cont-registrate'>
+                        {
+                            usuario?.nombre ?
+                                <ul className='ul-nav-med'>
+                                    <li
+                                        className='navbar-item-admin'
+                                        onMouseEnter={handleMouseEnterCambiarPass}
+                                        onMouseLeave={handleMouseLeaveCambiarPass}
+                                    >
+                                        <p className='nombreUsuario'>{usuario.nombre}</p>
+                                        {/* menú admin */}
+                                        {
+                                            muestraCambiarPass && (
+                                                <ul className='dropdown-menu-usuario'>
+                                                    <li className='dropdown-item-admin'>
+                                                        <NavLink to='/actualizarContraseña' className='link-navbar-usuario'>Cambiar contraseña</NavLink>
+                                                    </li>
+                                                </ul>
+                                            )
+                                        }
+                                    </li>
+                                </ul>
+                                :
+                                <NavLink to='/registrarse' className='link-navbar'>Registrate</NavLink>
+                        }
+                    </div>
+                    {/* menú Admin */}
                     {
-                        usuario?.nombre ? 
-                            <ul className='ul-nav-med'>
-                                <li 
-                                    className='navbar-item-admin'
-                                    onMouseEnter={handleMouseEnterCambiarPass}
-                                    onMouseLeave={handleMouseLeaveCambiarPass}
-                                >
-                                    <p className='nombreUsuario'>{usuario.nombre}</p>
-                                    {/* menú admin */}
-                                    {
-                                        muestraCambiarPass && (
-                                            <ul className='dropdown-menu-usuario'>
-                                                <li className='dropdown-item-admin'>
-                                                    <NavLink to='/actualizarContraseña' className='link-navbar-usuario'>Cambiar contraseña</NavLink>
-                                                </li>
-                                            </ul>
-                                        )
-                                    }
-                                </li>
-                            </ul>
-                        :
-                        <NavLink to='/registrarse' className='link-navbar'>Registrate</NavLink>
-                    }
-                </div>
-                {/* menú Admin */}
-                {
-                    usuario?.isAdmin && (
+                        usuario?.isAdmin && (
                             <ul className='ul-nav-med'>
                                 <li
                                     className='navbar-item-admin'
@@ -111,22 +111,22 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                     }
                                 </li>
                             </ul>
-                    )
-                }
-                {/* regist/log */}
-                <div className='cont-login'>
-                    {
-                        usuario?.nombre ? 
-                        <button
-                            onClick={() => { handleLogOut() }}
-                            style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}
-                        >
-                            <LogoutIcon sx={{ 'fontSize': '30px' }} />
-                        </button> :
-                        <NavLink to='/login' className='link-navbar'>Iniciar sesión</NavLink>
+                        )
                     }
-                </div>
-                {/* carrito/fav */}
+                    {/* regist/log */}
+                    <div className='cont-login'>
+                        {
+                            usuario?.nombre ?
+                                <button
+                                    onClick={() => { handleLogOut() }}
+                                    style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}
+                                >
+                                    <LogoutIcon sx={{ 'fontSize': '30px' }} />
+                                </button> :
+                                <NavLink to='/login' className='link-navbar'>Iniciar sesión</NavLink>
+                        }
+                    </div>
+                    {/* carrito/fav */}
                     {
                         usuario?.isAdmin === false && (
                             <div className='cont-carrito-fav'>
@@ -145,7 +145,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                             </div>
                         )
                     }
-            </div>
+                </div>
             </div>
         </div>
     );

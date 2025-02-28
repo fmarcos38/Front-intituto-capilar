@@ -4,11 +4,32 @@
   --color-fuente: white;
 }
 
-.page {
+/* estilos para los componentes Page */
+.page{
   width: 100%;
   min-height: 90vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: start;
-  background-color: var(--fondo-page);
+  background-color: var(--gris-fondo);
+}
+/* botnes para los Carruseles */
+.btn-atras{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.btn-sgt{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

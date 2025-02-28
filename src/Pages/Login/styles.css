@@ -1,0 +1,36 @@
+.cont-login-page {
+    position: relative;
+    justify-content: center;
+}
+.cont-login-clasico-page{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-login-google-page{
+    margin-top: 20px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* modal */
+.modalRecuperaDatos{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: #3e3d3d;
+    z-index: 1000;
+}
+.hidden{
+    display: none;
+}
+/* responsive */
+@media screen and (max-width: 700px) {
+    .cont-login-clasico-page{
+        width: 95%;
+    }
+}

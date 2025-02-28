@@ -10,17 +10,17 @@ function NavbarSup() {
         <div className='cont-navbarSup'>
             <div className='sub-cont-navbarSup'>
                 <div className='cont-navbarSup__tel'>
-                    <LocalPhoneIcon sx={{ fontSize: 15, color: 'white' }} />
+                    <LocalPhoneIcon sx={{ fontSize: 15, color: 'black' }} />
                     <p className='p-tel-navSup'>02236871534</p>
                 </div>
                 <div className='cont-navbarSup__email'>
-                    <EmailIcon sx={{ fontSize: 15, color: 'white' }} />
+                    <EmailIcon sx={{ fontSize: 15, color: 'black' }} />
                     <a href="mailto: info@ortizlizmar" className='a-email-navSup'>
                         <p className='p-tel-navSup'>info@ortizlizmar</p>
                     </a>
                 </div>
                 <div className='cont-navbarSup__redes'>
-                    <InstagramIcon sx={{ fontSize: 15, color: 'white' }} />
+                    <InstagramIcon sx={{ fontSize: 15, color: 'black' }} />
                     <a href='https://www.instagram.com/institutocapilargam/' className='a-email-navSup'>
                         <p className='p-tel-navSup'>institutocapilargam</p>
                     </a>

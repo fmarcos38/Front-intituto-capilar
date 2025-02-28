@@ -19,14 +19,14 @@
     justify-content: center;
     align-items: center;
     margin: 0 10px;
-    border-left: 1px solid white;
+    border-left: 1px solid black;
     padding-left: 10px;
 }
 .a-email-navSup{
     text-decoration: none;
 }
 .p-tel-navSup{
-    color: white;
+    color: black;
     font-size: 15px;
     margin: 0 0 0 5px;
 }

@@ -1,0 +1,129 @@
+.cont-form-datos-usuario{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--gris-bordes);
+    background-color: rgb(233, 233, 235);
+}
+.cont-form-datos-usuario-nomb-ape-dni,
+.cont-form-datos-usuario-email-pass,
+.cont-form-datos-usuario-tel-area,
+.cont-form-datos-usuario-calle-num-piso-depto,
+.cont-form-datos-usuario-prov-loc-cod-postal{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.cont-nomb,
+.cont-ape,
+.cont-dni,
+.cont-email,
+.cont-password,
+.cont-pass-viewPass,
+.cont-area,
+.cont-tel,
+.cont-calle,
+.cont-numero,
+.cont-piso,
+.cont-depto,
+.cont-cod-postal,
+.cont-prov,
+.cont-localidad{
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.cont-password{
+    width: 50%;
+}
+.cont-pass-viewPass{
+    width: 100%;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid var(--gris-bordes);
+}
+.cont-email,
+.cont-area,
+.cont-tel{
+    width: 50%;
+}
+.cont-calle{
+    width: 70%;
+}
+.cont-numero{
+    width: 14%;
+}
+.cont-piso,
+.cont-depto{
+    width: 8%;
+}
+/* inputs */
+.input-form-usuario,
+.input-form-pass,
+.textarea-contacto{
+    width: 100%;
+    font-size: 20px;
+    padding: 3px;
+    border: 1px solid var(--gris-bordes);
+    border-radius: 5px;
+}
+.input-form-pass{
+    border: none;
+}
+.btn-viewPass{
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+}
+.cont-textarea-contacto{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.btn-continuar-compra{
+    margin: 10px 0;
+}
+
+
+/* respon */
+@media screen and (max-width: 550px) {
+    .cont-form-datos-usuario-nomb-ape-dni,
+    .cont-form-datos-usuario-email-pass,
+    .cont-form-datos-usuario-tel-area,
+    .cont-form-datos-usuario-calle-num-piso-depto,
+    .cont-form-datos-usuario-prov-loc-cod-postal{
+        width: 100%;
+        flex-direction: column;
+    }
+        .cont-nomb,
+        .cont-ape,
+        .cont-dni,
+        .cont-email,
+        .cont-password,
+        .cont-area,
+        .cont-tel,
+        .cont-calle,
+        .cont-numero,
+        .cont-piso,
+        .cont-depto,
+        .cont-cod-postal,
+        .cont-prov,
+        .cont-localidad{
+            width: 90%;
+        }
+        .cont-pass-viewPass{
+            width: 100%;
+            justify-content: start;
+            align-items: center;
+        }
+}

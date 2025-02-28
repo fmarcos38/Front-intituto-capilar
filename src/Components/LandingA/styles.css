@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Lobster&family=Rochester&family=SUSE:wght@100..800&display=swap');
+
+.cont-land-A{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.cont-img-land-A{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.cont-texto-1{
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    background-color: tomato;
+}
+.p1-texto-1{
+    
+}
+.p2-texto-1{
+    font-family: 'Rochester', cursive;
+}
