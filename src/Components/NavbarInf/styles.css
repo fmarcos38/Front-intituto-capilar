@@ -33,8 +33,7 @@
 }
 .logo-navbarInf{
     position: relative;
-    width: 90%;
-    height: 65px;
+    height: 6rem;
     top: -10px;
 }
 .logo-navbarInf:hover{

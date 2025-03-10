@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Lobster&family=Rochester&family=SUSE:wght@100..800&display=swap');
 
 .cont-land-A{
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: auto;
 }
 .cont-img-land-A{
     width: 100%;
@@ -46,17 +45,42 @@
     position: relative;
     top: 85px;
     left: 110px;
+    animation: slideInRight 1s ease-in-out 2s;
 }
 .p2-texto-1{
     font-family: 'Rochester', cursive;
     font-size: 170px;
     color: white;
     margin: 0;
+    animation: slideInLeft 1s ease-in-out 1s;
 }
 .p3-texto-1{
     position: relative;
     top: -30px;
     left: 80px;
+    animation: slideInRight 1s ease-in-out 4s;
+}
+/* animacion para los textos */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 .cont-texto-2{
     position: absolute;
@@ -70,7 +94,6 @@
     color: white;
     margin: 0;
 }
-.p2-texto-2{}
 /* estilos flecha que señala hacia abajo compuesta por dos palitos blancos con movimiento hacia arriba y abjo */
 .cont-flecha {
     position: absolute;

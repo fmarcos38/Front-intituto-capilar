@@ -3,6 +3,8 @@ import { userData } from '../../localStorage';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductos, getProductosEnOferta, getUsuarioById, getCarrito } from '../../Redux/Actions';
 import { AppContext } from '../../Context';
+import LandingA from '../../Components/LandingA';
+import LandingB from '../../Components/LandingB';
 /* import CarritoCompras from '../../components/CarritoCompras';
 import Carrusel from '../../components/CarruselTemporizador';
 import ListaOfertas from '../../components/ListaOfertas';
@@ -14,7 +16,7 @@ import imgPChica4 from '../../imagenes/img-pChica/ScreenShot004.jpg';
 import Filtros from '../../components/Filtros'; */
 import Paginacion from '../../Components/Paginacion';
 import './styles.css';
-import LandingA from '../../Components/LandingA';
+
 
 
 function Home() {
@@ -71,10 +73,15 @@ function Home() {
 
   return (
     <div className='cont-home'>
+      {/* land A */}
       <div className='cont-home-land-A'>
         <LandingA />
       </div>
-      
+      {/* land B */}
+      <div className='cont-home-land-B'>
+        <LandingB />
+      </div>
+      {/* cartel */}
       <div className='cont-msj-envio'>
         <h1 className='msj-envio'>
           ENVIOS A TODO EL PAÍS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENVIOS A TODO EL PAÍS

@@ -5,15 +5,14 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    background-color: #776de1;
 }
-.cont-home-land-A{
+.cont-home-land-A,
+.cont-home-land-B{
     width: 100%;
     height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
 }
 .cont-msj-envio{
     width: 100%;

@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AppContext } from '../../Context';
 import MenuHamburguesa from '../MenuHamburguesa';
+import Logo from '../../Images/LOGO.png';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LogoutIcon from '@mui/icons-material/Logout';
 import './styles.css';
-import { AppContext } from '../../Context';
+
 
 function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
@@ -37,14 +39,14 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
     return (
         <div className='cont-navbarInf'>
             <div className='sub-cont-navbarInf'>
+                {/* menú hamburg */}
                 <div className='col-1-navbarInf'>
                     <MenuHamburguesa  usuario={usuario} isOpen={isOpen} handleLogOut={handleLogOut}/>
                 </div>
-
+                {/* logo */}
                 <div className='col-2-logo-navbarInf'>
                     <NavLink to='/' className='navlink-navbarInf'>
-                        {/* <img src={Logo} alt='Logo' className='logo-navbarInf' /> */}
-                        <p>Tu Logo</p>
+                        <img src={Logo} alt='Logo' className='logo-navbarInf' />
                     </NavLink>
                 </div>
 
