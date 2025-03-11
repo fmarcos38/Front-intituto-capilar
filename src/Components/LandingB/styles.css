@@ -99,3 +99,84 @@
         font-weight: 300;
     }
 }
+@media screen and (max-width: 700px) {
+    .cont-landing-B{
+        height: 630px;
+    }
+    .cont-titulo-landB{
+        height: 10%;
+        align-items: end;
+    }
+    .cont-texto-Y-img-landB{
+        height: 30%;
+    }
+    .texto-landB{
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .cont-card-turno{
+        width: 100%;
+        height: 60%;
+        align-items: center;
+    }
+    .card-turno{
+        width: 300px;
+        height: 75%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .cont-landing-B{
+        height: 700px;
+    }
+    .cont-titulo-landB{
+        width: 95%;
+        height: 5%;
+        align-items: end;
+    }
+    .titulo-landB{
+        margin: 0;
+        font-size: 15px;
+        color: white;
+    }
+    .cont-texto-Y-img-landB{
+        width: 95%;
+        height: 40%;
+    }
+    .texto-landB{
+        width: 95%;
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .cont-card-turno{
+        width: 95%;
+        height: 55%;
+        align-items: center;
+    }
+    .card-turno{
+        width: 300px;
+        height: 65%;
+    }
+}
+@media screen and (max-width: 380px) {
+    .cont-landing-B{
+        height: 630px;
+    }
+    .cont-texto-Y-img-landB{
+        width: 95%;
+        height: auto;
+    }
+    .cont-card-turno{
+        width: 95%;
+        height: auto;
+        align-items: center;
+    }
+    .card-turno{
+        width: 300px;
+        height: auto;
+    }
+    .btn-turno-whtsApp{
+        width: 60%;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+}
