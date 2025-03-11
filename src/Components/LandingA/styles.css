@@ -32,33 +32,51 @@
 .cont-texto-1{
     position: absolute;
     width: auto;
-    top: 120px;
+    top: 150px;
     left: 100px;
 }
 .p1-texto-1,
+.p3-texto-1,
+.p1-texto-2,
+.p2-texto-2 {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.p1-texto-1{
+    font-size: 40px;
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+    /* para la animaciòn */
+    left: 110px;
+    animation: slideInLeft 1s ease-in-out 1s forwards;
+}
 .p3-texto-1{
+    text-align: center;
     font-size: 25px;
     color: white;
     margin: 0;
+    animation: slideInLeft 1s ease-in-out 2s forwards;
 }
-.p1-texto-1{
-    position: relative;
-    top: 85px;
-    left: 110px;
-    animation: slideInRight 1s ease-in-out 2s;
+.cont-texto-2{
+    position: absolute;
+    width: auto;
+    top: 450px;
+    right:100px;
 }
-.p2-texto-1{
+.p1-texto-2{
     font-family: 'Rochester', cursive;
-    font-size: 170px;
+    font-size: 120px;
     color: white;
     margin: 0;
-    animation: slideInLeft 1s ease-in-out 1s;
+    text-align: center;
+    animation: slideInRight 1s ease-in-out 1s forwards;
 }
-.p3-texto-1{
-    position: relative;
-    top: -30px;
-    left: 80px;
-    animation: slideInRight 1s ease-in-out 4s;
+.p2-texto-2{
+    font-size: 25px;
+    color: white;
+    margin: 0;
+    animation: slideInRight 1s ease-in-out 2s forwards;
 }
 /* animacion para los textos */
 @keyframes slideInLeft {
@@ -82,18 +100,7 @@
         opacity: 1;
     }
 }
-.cont-texto-2{
-    position: absolute;
-    width: auto;
-    top: 600px;
-    right:100px;
-}
-.p1-texto-2,
-.p2-texto-2{
-    font-size: 25px;
-    color: white;
-    margin: 0;
-}
+
 /* estilos flecha que señala hacia abajo compuesta por dos palitos blancos con movimiento hacia arriba y abjo */
 .cont-flecha {
     position: absolute;

@@ -1,7 +1,5 @@
 import React from 'react';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
-import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import './styles.css';
 
 function LandingB() {

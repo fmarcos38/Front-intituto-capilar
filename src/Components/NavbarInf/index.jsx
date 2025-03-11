@@ -115,7 +115,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                             </ul>
                         )
                     }
-                    {/* regist/log */}
+                    {/* iniciar ses */}
                     <div className='cont-login'>
                         {
                             usuario?.nombre ?

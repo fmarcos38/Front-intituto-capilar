@@ -74,10 +74,10 @@
 .cont-favoritos{
     width: 25%;
     height: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 .dropdown-menu-admin{
     position: absolute;
@@ -158,17 +158,25 @@
 
 /* responsive */
 @media screen and (max-width: 1200px) {
+    .sub-cont-navbarInf{
+        width: 90%;
+        justify-content: start;
+        align-items: center;
+        background-color: blue;
+    }
     /* col-2-logo-navbarInf */
     .col-2-logo-navbarInf{
-        width: 15%;
+        width: 10%;
     }
     .logo-navbarInf{
         position: relative;
-        width: 95%;
+        width: 98%;
         height: 75px;
         top: -10px;
     }
-    
+    .col-3-navbarInf{
+        width: 20%;
+    }
     .logo-navbarInf{
         position: relative;
         width: 90%;
@@ -184,6 +192,7 @@
     .cont-registrate,
     .cont-login{
         width: 50%;
+        background-color: blueviolet;
     }
     .link-navbar{
         font-size: 13px;
