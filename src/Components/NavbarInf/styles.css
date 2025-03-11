@@ -32,27 +32,22 @@
     align-items: center;
 }
 .logo-navbarInf{
-    position: relative;
-    height: 6rem;
-    top: -10px;
+    height: 5.5rem;
 }
 .logo-navbarInf:hover{
     cursor: pointer;
     border-radius: 20px;
-    background-color: rgb(50, 50, 50);
 }
 /* col-2 */
 .col-2-navbarInf{
     width: 55%;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .ul-navbar-Inf{
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .item-nav{
     list-style: none;
@@ -159,79 +154,116 @@
 /* responsive */
 @media screen and (max-width: 1200px) {
     .sub-cont-navbarInf{
-        width: 90%;
+        width: 95%;
         justify-content: start;
         align-items: center;
-        background-color: blue;
     }
     /* col-2-logo-navbarInf */
     .col-2-logo-navbarInf{
-        width: 10%;
+        width: 8%;
     }
     .logo-navbarInf{
         position: relative;
         width: 98%;
-        height: 75px;
-        top: -10px;
+        height: 60px;
+    }
+    /* col de items */
+    .col-2-navbarInf{
+        width: 70%;
+        height: 50px;
+    }
+    .ul-navbar-Inf{
+        width: 100%;
+    }
+    .item-nav{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        font-size: 12px;
+        margin: 0;
     }
     .col-3-navbarInf{
-        width: 20%;
-    }
-    .logo-navbarInf{
-        position: relative;
-        width: 90%;
-        height: 53px;
-        top: -10px;
-    }
-    /* col-2 */
-    .item-nav{
-        font-size: 16px;
-        margin: 0 10px;
+        width: 22%;
     }
     /* col-3 */
     .cont-registrate,
     .cont-login{
         width: 50%;
-        background-color: blueviolet;
     }
+    /* tamaño de la palabra reg y iniciar ses */
     .link-navbar{
         font-size: 13px;
     }
 }
 @media screen and (max-width: 790px) {
+    .sub-cont-navbarInf{
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
     /* col-1 */
     .col-1-navbarInf{
         width: 5%;
         height: 50px;
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
     }
     /* col-2-logo-navbarInf */
     .col-2-logo-navbarInf{
-        width: 80%;
+        width: 60%;
+    }
+    .navlink-navbarInf{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .logo-navbarInf{
-        position: relative;
-        width: 40%;
-        height: 63px;
+        width: 20%;
+        height: 45px;
+        margin-left: 100px;
+        border-radius: 10px;
     }
     /* col-2 */
     .col-2-navbarInf{
         display: none;
     }
-}
-@media screen and (max-width: 700px) {
-    .logo-navbarInf{
-        position: relative;
-        width: 50%;
-        height: 55px;
+    /* col-3 */
+    .col-3-navbarInf{
+        width: 35%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
     }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
+    /* col-1 */
+    .col-1-navbarInf{
+        width: 10%;
+    }
     .logo-navbarInf{
-        width: 60%;
-        height: 50px;
-        margin-top: 15px;
+        width: 30%;
+        margin-left: 70px;
+    }
+    /* col-2-logo-navbarInf */
+    .col-2-logo-navbarInf{
+        width: 55%;
+    }
+    /* col-3 */
+    .col-3-navbarInf{
+        width: 35%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cont-registrate,
+    .cont-login,
+    .cont-carrito,
+    .cont-favoritos{
+        width: 100%;
+    }
+    .link-navbar{
+        font-size: 12px;
     }
 }

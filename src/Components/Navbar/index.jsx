@@ -10,6 +10,7 @@ import './styles.css';
 function Navbar() {
     const usuarioLog = userData(); //usuario loguedo
     const usuario = useSelector(state => state.dataUsuario); //usuario logueado
+    // eslint-disable-next-line no-unused-vars
     const [isOpen, setIsOpen] = React.useState(false); //menu hamburguesa  
     const [scrolled, setScrolled] = useState(false); //estado para cambiar el color de la navbar al hacer scroll
     const carrito = useSelector(state => state.carrito); //carrito para obtener cantidad de productos
@@ -43,7 +44,7 @@ function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             if (window.innerWidth > 500) { // Solo aplica el efecto en pantallas mayores a 500px
-                if (window.scrollY > 600) {
+                if (window.scrollY > 500) {
                     setScrolled(true);
                 } else {
                     setScrolled(false);

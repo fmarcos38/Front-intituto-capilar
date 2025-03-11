@@ -26,7 +26,7 @@ function LandingB() {
             <div className='cont-card-turno'>
                 <div className='card-turno'>
                     <div className='cont-icono-turno'>
-                        <PermContactCalendarIcon sx={{fontSize:'50px'}}/>
+                        <PermContactCalendarIcon sx={{ fontSize: '50px' }} />
                     </div>
                     <div className='cont-titulo-turno'>
                         <h3 className='titulo-turno'>Solicitá tu turno</h3>

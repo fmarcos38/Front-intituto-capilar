@@ -139,9 +139,13 @@
     }
 }
 
-
 /* responsie */
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1300px){
+    .cont-home-land-A,
+    .cont-home-land-B{
+        width: 100%;
+        height: 630px;
+    }
     .cont-ofertas-home{
         width: 95%;
     }
@@ -199,5 +203,26 @@
     }
     .cont-filtros-home{
         border-radius: 10px;
+    }
+}
+/* en combinación con landing A y B */
+@media screen and (max-width: 500px) {
+    .cont-home-land-A,
+    .cont-home-land-B {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 380px) {
+    .cont-home-land-A,
+    .cont-home-land-B {
+        width: 100%;
+        height: 630px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
