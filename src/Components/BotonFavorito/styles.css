@@ -1,0 +1,13 @@
+.btn-fav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+.siFav{
+    color: red;
+}

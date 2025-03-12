@@ -1,0 +1,125 @@
+.cont-card-prod-mi-carrito,
+.cont-card-prod-mi-carrito-sin-stock{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid var(--gris-bordes);
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+.cont-card-prod-mi-carrito-sin-stock{
+    border: 1px solid red;
+}
+/* col img */
+.cont-img-card-prod-mi-carrito{
+    width: 10%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.img-card-prod-mi-carrito{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 10px;
+}
+/* col datos(nomb, stock, precio) */
+.cont-info-card-prod-mi-carrito{
+    width: 80%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.cont-nombre-pala-prod-mi-carrito{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nombre-pala-prod-mi-carrito{
+    color: var(--color-azul);
+}
+.cont-stock-pala-prod-mi-carrito,
+.cont-precio-pala-prod-mi-carrito{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stock-pala-prod-mi-carrito{
+    margin: 0;
+}
+/* col btn elim */
+
+/* responsive */
+@media screen and (max-width: 1000px){
+    .cont-img-card-prod-mi-carrito{
+        width: 15%;
+    }
+    .cont-nombre-pala-prod-mi-carrito{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nombre-pala-prod-mi-carrito{
+        font-size: 10px;
+        padding: 0 5px;
+    }
+    .cont-stock-pala-prod-mi-carrito{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cont-precio-pala-prod-mi-carrito{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 550px){
+    .cont-card-prod-mi-carrito,
+    .cont-card-prod-mi-carrito-sin-stock,
+    .cont-info-card-prod-mi-carrito{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* col img */
+    .cont-img-card-prod-mi-carrito{
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-card-prod-mi-carrito{
+        width: 130px;
+        height: 130px;
+    }
+    .cont-nombre-pala-prod-mi-carrito{
+        width: 100%;
+    }
+    .nombre-pala-prod-mi-carrito{
+        font-size: 15px;
+        text-align: center;
+    }
+    .cont-stock-pala-prod-mi-carrito{
+        width: 50%;
+    }
+    .cont-precio-pala-prod-mi-carrito{
+        width: 50%;
+    }
+    .precio-pala-prod-mi-carrito{
+        font-size: 20px;
+    }
+    .stock-pala-prod-mi-carrito{
+        margin: 0;
+    }
+}

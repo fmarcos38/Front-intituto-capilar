@@ -1,0 +1,50 @@
+.lista-ofertas-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.lista-ofertas {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    transition: transform 0.3s ease-in-out;
+}
+
+.arrow-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.buttonLeft{
+    margin: 0;
+}
+.arrow-button:focus {
+    outline: none;
+}
+
+.arrow-button:first-of-type {
+    left: 10px;
+}
+
+.arrow-button:last-of-type {
+    right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .lista-ofertas {
+        width: auto;
+    }
+    .arrow-button {
+        font-size: 15px;
+    }
+}

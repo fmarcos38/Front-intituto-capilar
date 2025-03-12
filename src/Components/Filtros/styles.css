@@ -1,0 +1,108 @@
+.cont-filtros{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cont-filtro-marca,
+.cont-filtro-categoria,
+.cont-filtro-rango-precio{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.cont-titulo-filtros{
+    width: 80%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border-bottom: 1px solid black;
+}
+.titulo-filtro{
+    font-size: 18px;
+}
+.titulo-filtro-marcas,
+.titulo-filtro-rango-precio{
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.cont-map-marca{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.cont-check-Y-label-marca,
+.cont-check-Y-label-categoria{
+    width: 80%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.displeyOFF{
+    display: none;
+}
+.check-marca,
+.check-categoria{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.label-check-marca,
+.label-check-categoria{
+    font-size: 25px;
+    font-weight: 500px;
+}
+.cont-filtro-rango-precio{
+    margin-top: 20px;
+}
+/* respoonsive */
+@media screen and (max-width: 950px){
+    .cont-map-marca{
+        display: flex;
+        flex-direction:row;
+        justify-content: start;
+        align-items: center;
+    }
+    .cont-check-Y-label-marca,
+    .cont-check-Y-label-categoria{
+        width: 80%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 750px) {
+    .check-marca,
+    .check-categoria {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    .label-check-marca,
+    .label-check-categoria {
+        font-size: 20px;
+        font-weight: 300px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .cont-map-marca {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .cont-check-Y-label-marca,
+    .cont-check-Y-label-categoria {
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+}

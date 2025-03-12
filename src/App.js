@@ -1,11 +1,11 @@
-
-import Navbar from './Components/Navbar';
 import { AppProvider } from './Context';
 import { Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
 import RegistrarsePage from './Pages/Registrarse';
 import LoginPage from './Pages/Login';
 import RecuperarDatosUsuario from './Components/RecuperarDatosUsuario';
+import Footbar from './Components/Footbar';
 import './App.css';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         </main>
 
           <footer>
-              foot
+              <Footbar />
           </footer>
       </div>
       </AppProvider>

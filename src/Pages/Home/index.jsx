@@ -5,15 +5,15 @@ import { getProductos, getProductosEnOferta, getUsuarioById, getCarrito } from '
 import { AppContext } from '../../Context';
 import LandingA from '../../Components/LandingA';
 import LandingB from '../../Components/LandingB';
-/* import CarritoCompras from '../../components/CarritoCompras';
-import Carrusel from '../../components/CarruselTemporizador';
-import ListaOfertas from '../../components/ListaOfertas';
-import ListaProductos from '../../components/ListaProductos';
-import imgPChica1 from '../../imagenes/img-pChica/ScreenShot001.jpg';
-import imgPChica2 from '../../imagenes/img-pChica/ScreenShot002.jpg';
-import imgPChica3 from '../../imagenes/img-pChica/ScreenShot003.jpg';
-import imgPChica4 from '../../imagenes/img-pChica/ScreenShot004.jpg';
-import Filtros from '../../components/Filtros'; */
+import CarritoCompras from '../../Components/CarritoCompras';
+import Carrusel from '../../Components/CarruselTemporizador';
+import ListaOfertas from '../../Components/ListaOfertas';
+import ListaProductos from '../../Components/ListaProductos';
+import imgPChica1 from '../../Images/img-pChica/ScreenShot001.jpg';
+import imgPChica2 from '../../Images/img-pChica/ScreenShot002.jpg';
+import imgPChica3 from '../../Images/img-pChica/ScreenShot003.jpg';
+import imgPChica4 from '../../Images/img-pChica/ScreenShot004.jpg';
+import Filtros from '../../Components/Filtros';
 import Paginacion from '../../Components/Paginacion';
 import './styles.css';
 
@@ -22,6 +22,7 @@ import './styles.css';
 function Home() {
 
   let data = userData(); 
+  const arrImgsMostrar = [imgPChica1, imgPChica2, imgPChica3, imgPChica4]; //array de imagenes a mostrar en el carrusel
   const [marca, setMarca] = React.useState('');
   const [categoria, setCategoria] = React.useState('');
   const [enPromo, setPromo] = React.useState(false);
@@ -90,16 +91,14 @@ function Home() {
       
       {/* carrusel */}
       <div className='cont-carrusel-home'>
-        Carrusel
-        {/* <Carrusel imagenes={arrImgsMostrar} /> */}
+        <Carrusel imagenes={arrImgsMostrar} />
       </div>
       
       {/* titulo ofertas y Lista prods en oferta*/}
       <div className='cont-ofertas-home'>
         <h2 className='titulo-ofertas'>APROVECHA NUESTRAS OFERTAS</h2>
         <div className='cont-lista-ofertas'>
-          lista prods
-          {/* <ListaOfertas productos={productosEnOferta}/> */}
+          <ListaOfertas productos={productosEnOferta}/>
         </div>
       </div>
       
@@ -111,8 +110,7 @@ function Home() {
         <div className='cont-filtros-lista-prods'>
           {/* filtros */}
           <div className='cont-filtros-home'>
-            filtros
-            {/* <Filtros
+            <Filtros
               marca={marca}
               setMarca={setMarca}
               categoria={categoria}
@@ -124,12 +122,11 @@ function Home() {
               precioMax={precioMax}
               setPrecioMax={setPrecioMax}
               setPaginaActual={setPaginaActual}
-            /> */}
+            />
           </div>
           {/* lista productos */}
           <div className='cont-lista-productos-home'>
-            Lissta prods
-            {/* <ListaProductos productos={productos} /> */}
+            <ListaProductos productos={productos} />
             {/* paginación */}
             <Paginacion              
               paginaActual={paginaActual}
@@ -143,8 +140,7 @@ function Home() {
 
       {/* Carrito de Comrpas - modal */}
       <div className={context.carritoModal === true ? 'modal-carrito-compras-open left-slide' : ''}>
-        carrito
-          {/* <CarritoCompras /> */}
+          <CarritoCompras />
         </div>
     </div>
   )
