@@ -9,10 +9,6 @@ import CarritoCompras from '../../Components/CarritoCompras';
 import Carrusel from '../../Components/CarruselTemporizador';
 import ListaOfertas from '../../Components/ListaOfertas';
 import ListaProductos from '../../Components/ListaProductos';
-import imgPChica1 from '../../Images/img-pChica/ScreenShot001.jpg';
-import imgPChica2 from '../../Images/img-pChica/ScreenShot002.jpg';
-import imgPChica3 from '../../Images/img-pChica/ScreenShot003.jpg';
-import imgPChica4 from '../../Images/img-pChica/ScreenShot004.jpg';
 import Filtros from '../../Components/Filtros';
 import Paginacion from '../../Components/Paginacion';
 import './styles.css';
@@ -21,17 +17,16 @@ import './styles.css';
 
 function Home() {
 
-  let data = userData(); 
-  const arrImgsMostrar = [imgPChica1, imgPChica2, imgPChica3, imgPChica4]; //array de imagenes a mostrar en el carrusel
+  let data = userData();
+  const productos = useSelector((state) => state.productos);
+  const totalProductos = useSelector((state) => state.totProds);
+  const productosEnOferta = useSelector(state => state.enPromo); //productos en oferta
+  //const arrImgsMostrar = ; //prods para el carrusel a mostrar en el carrusel
   const [marca, setMarca] = React.useState('');
   const [categoria, setCategoria] = React.useState('');
   const [enPromo, setPromo] = React.useState(false);
   const [precioMin, setPrecioMin] = React.useState(10);
   const [precioMax, setPrecioMax] = React.useState(1000000);
-  //const arrImgsMostrar = [imgPChica1, imgPChica2, imgPChica3, imgPChica4]; //array de imagenes a mostrar en el carrusel
-  const productos = useSelector((state) => state.productos);
-  const totalProductos = useSelector((state) => state.totProds);
-  const productosEnOferta = useSelector(state => state.enPromo); //productos en oferta
   const dispatch = useDispatch();
   const context = useContext(AppContext);
   //paginación
@@ -91,7 +86,7 @@ function Home() {
       
       {/* carrusel */}
       <div className='cont-carrusel-home'>
-        <Carrusel imagenes={arrImgsMostrar} />
+        {/* <Carrusel imagenes={arrImgsMostrar} /> */} {/* pasar productos */}
       </div>
       
       {/* titulo ofertas y Lista prods en oferta*/}
