@@ -81,13 +81,13 @@ function Registrarse() {
     };
     //funcion para ver la password
     const onClickVerContraseña = () => {
-        const inputContraseña = document.querySelector('.input-password');
+        const inputContraseña = document.querySelector('#password');
         if(inputContraseña.type === 'password') { //le cambio el tipo de input
             inputContraseña.type = 'text';
         }else {
             inputContraseña.type = 'password';
         }
-    }    
+    }
     const validar = () => {
         const campos = {
             nombre,

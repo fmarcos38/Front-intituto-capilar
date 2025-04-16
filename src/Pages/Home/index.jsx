@@ -1,12 +1,11 @@
 import React, { useContext, useEffect } from 'react';
-import { userData } from '../../localStorage';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductos, getProductosEnOferta, getUsuarioById, getCarrito } from '../../Redux/Actions';
+import { getProductos, getProductosEnOferta, getCarrito } from '../../Redux/Actions';
 import { AppContext } from '../../Context';
 import LandingA from '../../Components/LandingA';
 import LandingB from '../../Components/LandingB';
 import CarritoCompras from '../../Components/CarritoCompras';
-import Carrusel from '../../Components/CarruselTemporizador';
+//import Carrusel from '../../Components/CarruselTemporizador';
 import ListaOfertas from '../../Components/ListaOfertas';
 import ListaProductos from '../../Components/ListaProductos';
 import Filtros from '../../Components/Filtros';
@@ -14,10 +13,8 @@ import Paginacion from '../../Components/Paginacion';
 import './styles.css';
 
 
-
 function Home() {
 
-  let data = userData();
   const productos = useSelector((state) => state.productos);
   const totalProductos = useSelector((state) => state.totProds);
   const productosEnOferta = useSelector(state => state.enPromo); //productos en oferta
@@ -29,6 +26,7 @@ function Home() {
   const [precioMax, setPrecioMax] = React.useState(1000000);
   const dispatch = useDispatch();
   const context = useContext(AppContext);
+  const data = context.dataUser;
   //paginación
   const [paginaActual, setPaginaActual] = React.useState(1);
   const prooductosPorPagina = 12;
@@ -52,19 +50,12 @@ function Home() {
     dispatch(getProductos(limit, offset, categoria, marca, enPromo, '', precioMin, precioMax));
   }, [categoria, dispatch, limit, marca, offset, precioMax, precioMin, enPromo]);
 
-  //efecto para traer los datos del usuario SI hay usuario logueado
-  useEffect(() => {
-    if (data?.user?.nombre) {
-      dispatch(getUsuarioById(data?.user?.id));
-    }
-  }, [data, dispatch]);
-
   //efecto para traer carrito del usuario SI hay usuario logueado
   useEffect(() => {
     if (data?.user?.nombre) {
       dispatch(getCarrito(data?.user?.id));
     }
-  }, [data, dispatch]);
+  }, [data?.user?.id, data?.user?.nombre, dispatch]);
 
 
   return (

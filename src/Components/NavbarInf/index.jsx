@@ -64,14 +64,14 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                 <div className='col-3-navbarInf'>
                     <div className='cont-registrate'>
                         {
-                            usuario?.nombre ?
+                            usuario?.user.nombre ?
                                 <ul className='ul-nav-med'>
                                     <li
                                         className='navbar-item-admin'
                                         onMouseEnter={handleMouseEnterCambiarPass}
                                         onMouseLeave={handleMouseLeaveCambiarPass}
                                     >
-                                        <p className='nombreUsuario'>{usuario.nombre}</p>
+                                        <p className='nombreUsuario'>{usuario.user.nombre}</p>
                                         {/* menú admin */}
                                         {
                                             muestraCambiarPass && (
@@ -89,36 +89,38 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                         }
                     </div>
                     {/* menú Admin */}
+                    <div className='cont-registrate'>
                     {
-                        usuario?.isAdmin && (
+                        usuario?.user.isAdmin && (
                             <ul className='ul-nav-med'>
-                                <li
-                                    className='navbar-item-admin'
-                                    onMouseEnter={handleMouseEnterAdmin}
-                                    onMouseLeave={handleMouseLeaveAdmin}
-                                >
-                                    Admin
-                                    {/* menú admin */}
-                                    {
-                                        muestraMenuAdmin && (
-                                            <ul className='dropdown-menu-admin'>
-                                                <li className='dropdown-item-admin'>
-                                                    <NavLink to='/admin/creaProd' className='link-navbar-admin'>Crea Producto</NavLink>
-                                                </li>
-                                                <li className='dropdown-item-admin'>
-                                                    <NavLink to='/admin/listaProdsAdmin' className='link-navbar-admin'>Lista Producto</NavLink>
-                                                </li>
-                                            </ul>
-                                        )
-                                    }
-                                </li>
-                            </ul>
+                                    <li
+                                        className='navbar-item-admin'
+                                        onMouseEnter={handleMouseEnterAdmin}
+                                        onMouseLeave={handleMouseLeaveAdmin}
+                                    >
+                                        <p className='nombreUsuario'>Admin</p>
+                                        {/* menú admin */}
+                                        {
+                                            muestraMenuAdmin  && (
+                                                <ul className='dropdown-menu-admin'>
+                                                    <li className='dropdown-item-admin'>
+                                                        <NavLink to='/actualizarContraseña' className='link-navbar-admin'>Crear producto</NavLink>
+                                                    </li>
+                                                    <li className='dropdown-item-admin'>
+                                                        <NavLink to='/actualizarContraseña' className='link-navbar-admin'>Listar productos</NavLink>
+                                                    </li>
+                                                </ul>
+                                            )
+                                        }
+                                    </li>
+                                </ul>
                         )
                     }
+                    </div>
                     {/* iniciar ses */}
                     <div className='cont-login'>
                         {
-                            usuario?.nombre ?
+                            usuario?.user.nombre ?
                                 <button
                                     onClick={() => { handleLogOut() }}
                                     style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}

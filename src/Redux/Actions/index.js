@@ -50,7 +50,7 @@ export const confirmarEmail = (email) => {
         await axios.get(`${URL}/usuario/confirmar?email=${email}`);
     }
 }
-
+//-----usuario--------------------
 //trae usuario por id
 export const getUsuarioById = (id) => {
     return async function(dispatch) {  

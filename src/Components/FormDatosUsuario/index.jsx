@@ -11,13 +11,18 @@ function FormDatosUsuario({
     <form onSubmit={handleSubmit} className='cont-form-datos-usuario'>      
         {/* nomb - ape- dni */}
         <div className='cont-form-datos-usuario-nomb-ape-dni'>
+          {/* nombre */}
           <div className='cont-nomb'>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
               <label className='label'>Nombre</label>
               {errors.nombre && <p style={{ margin: '0 0 0 5px', fontSize: '10px', color: 'red' }}>{errors.nombre}</p>}
             </div>
-            <input type="text" id="nombre" label="Nombre" value={nombre} onChange={handleChange} error={errors.nombre} className='input-form-usuario'/>
+            <input 
+              type="text" id="nombre" label="Nombre" value={nombre} 
+              onChange={handleChange} error={errors.nombre} className='input-form-usuario'
+            />
           </div>
+          {/* apellido */}
           <div className='cont-ape'>
             <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
               <label className='label'>Apellido</label>
@@ -25,6 +30,7 @@ function FormDatosUsuario({
             </div>
             <input type="text" id="apellido" label="Apellido" value={apellido} onChange={handleChange} error={errors.apellido} className='input-form-usuario'/>
           </div>
+          {/* dni */}
           <div className='cont-dni'>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
               <label className='label'>DNI</label>
@@ -33,6 +39,7 @@ function FormDatosUsuario({
             <input type="number" id="dni" label="DNI" value={dni} onChange={handleChange} error={errors.dni} className='input-form-usuario'/>
           </div>
         </div>
+
         {/* email - pass */}
         <div className='cont-form-datos-usuario-email-pass'>
               <div className='cont-email'>
@@ -59,16 +66,17 @@ function FormDatosUsuario({
           )
         }
         </div>
+
         {/* telefono - datos de factuarión */}
         <div className='cont-form-datos-usuario-tel-area'>
-          <div className='cont-area'>
+          <div className='cont-email'>
             <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
               <label className='label'>Num area</label>
               {errors.area && <p style={{margin: '0 0 0 5px', fontSize:'10px', color:'red'}}>{errors.area}</p>}
             </div>
             <input type="number" id="area" label="Area" value={area} onChange={handleChange} error={errors.area} className='input-form-usuario'/>
           </div>
-          <div className='cont-tel'>
+          <div className='cont-email'>
             <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
               <label className='label'>Num telefono</label>
               {errors.numTel && <p style={{margin: '0 0 0 5px', fontSize:'10px', color:'red'}}>{errors.numTel}</p>}
@@ -76,6 +84,7 @@ function FormDatosUsuario({
             <input type="number" id="numTel" label="Número de teléfono" value={numTel} onChange={handleChange} error={errors.numTel} className='input-form-usuario'/>
           </div>
         </div>
+
         {/* calle-num-piso-depto */}
         <div className='cont-form-datos-usuario-calle-num-piso-depto'>
           <div className='cont-calle'>
@@ -90,7 +99,8 @@ function FormDatosUsuario({
               <label className='label'>N°</label>
               {errors.numero && <p style={{margin: '0 0 0 5px', fontSize:'10px', color:'red'}}>{errors.numero}</p>}
             </div>
-            <input type="number" id="numero" label="Número" value={numero} onChange={handleChange} error={errors.numero} className='input-form-usuario'/>
+            <input type="number" id="numero" label="Número" value={numero} 
+              onChange={handleChange} error={errors.numero} className='input-form-usuario'/>
           </div>
           <div className='cont-piso'>
             <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
@@ -107,6 +117,7 @@ function FormDatosUsuario({
             <input type="text" id="depto" label="Depto" value={depto} onChange={handleChange} error={errors.depto} className='input-form-usuario'/>
           </div>
         </div>
+
         {/* provincia - localida - cod postal*/}
         <div className='cont-form-datos-usuario-prov-loc-cod-postal'>
           <div className='cont-cod-postal'>
@@ -131,9 +142,10 @@ function FormDatosUsuario({
             <input type="text" id="localidad" label="Localidad" value={localidad} onChange={handleChange} error={errors.localidad} className='input-form-usuario' />
           </div>
         </div>
+
         {/* comentarios */}
         <div className='cont-textarea-contacto'>
-          <label className='label'>Comentarios</label>
+          <label className='label'>Comentarios sobre lugar de entrega</label>
           <textarea id='comentarios' value={comentarios} onChange={handleChange} className="textarea-contacto" />
         </div>
       

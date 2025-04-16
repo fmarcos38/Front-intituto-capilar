@@ -5,6 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Swal from 'sweetalert2';
 import './styles.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -15,6 +16,7 @@ function LoginClasico() {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
+    const navigate = useNavigate(); 
 
     //valida errores
     const validate = () => {
@@ -58,6 +60,9 @@ function LoginClasico() {
                 password
             };
             dispatch(login(data));
+            if(usuarioLog?.message === 'ok') {
+                navigate('/'); //redirijo a la pagina principal
+            }
         }
     };
     // Función para manejar la tecla Enter

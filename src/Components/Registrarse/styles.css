@@ -6,11 +6,80 @@
     justify-content: start;
     align-items: center;
 }
-
+.cont-form-datos-usuario{
+    width: 100%;
+    height: auto;
+}
+.cont-form-datos-usuario-nomb-ape-dni,
+.cont-form-datos-usuario-email-pass,
+.cont-form-datos-usuario-tel-area,
+.cont-form-datos-usuario-calle-num-piso-depto,
+.cont-form-datos-usuario-prov-loc-cod-postal{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cont-dni,
+.cont-ape,
+.cont-nomb{
+    width: 32%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.cont-email,
+.cont-password{
+    width: 49%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.input-form-usuario{
+    width: 99%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.input-form-calle{
+    width: 99%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.cont-calle{
+    width: 68%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.cont-numero,
+.cont-piso,
+.cont-depto{
+    width: 9%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.cont-cod-postal
+.cont-prov,
+.cont-localidad{
+    width: 32%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
 /* responsive */
 @media screen and (max-width: 950px) {
     .cont-registrarse{
         width: 80%;
+        background-color: aqua;
     }
 }
 @media screen and (max-width: 550px) {

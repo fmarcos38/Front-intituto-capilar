@@ -74,13 +74,20 @@
     justify-content: center;
     align-items: center;
 }
+.navbar-item-admin{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .dropdown-menu-admin{
     position: absolute;
-    top: 90%;
-    right: 200px;    
+    top: 99%;
+    right: 0;    
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     width: auto;
     color: black;
     background-color: #f1f1f1;
@@ -127,14 +134,17 @@
     align-items: center;
 }
 .nombreUsuario{
-    color: white;
+    color: black;
     font-size: 14px;
     margin-right: 10px;
 }
 .dropdown-menu-usuario{
     position: absolute;
-    top: 90%;
-    left: -10px;    
+    top: 99%;
+    left: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
