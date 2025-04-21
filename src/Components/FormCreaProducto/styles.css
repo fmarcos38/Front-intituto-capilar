@@ -1,0 +1,210 @@
+.form-crea-prod{
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(229, 229, 229, 0.664);
+}
+.cont-imagen,
+.cont-nombre,
+.cont-descripcion{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cont-precio-cat-stock{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cont-precio-cat{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.cont-promo{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.cont-desc{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 10px;
+}
+.label-prod{
+    font-size: 20px;
+}
+.input-nombre-prod,
+.input-crea-precio,
+.input-crea-cat,
+.input-crea-stock{
+    width: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #6c6b6b;
+}
+.input-crea-desc{
+    width: 30%;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #6c6b6b;
+}
+.input-crea-descrip{
+    width: 100%;
+    min-height: 100px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #3b3a3a;
+}
+.cont-vista-previa{
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cont-img-vista-previa{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+}
+.btn-elimina-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.img-vista-previa{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-right: 3px;
+}
+.cont-promo-desc,
+.cont-agotado{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.check-crea-promo{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.label-prod{
+    margin-right: 5px;
+}
+.input-crea-descrip{
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #6c6b6b;
+    background-color: white;
+}
+.btn-crea-prod{
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #0c0463;
+    color: white;
+    cursor: pointer;
+}
+.error{
+    color: red;
+    font-size: 15px;
+    margin: 0;
+}
+/* responsive */
+@media screen and (max-width: 1100px){
+    .form-crea-prod{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 768px){
+    .form-crea-prod{
+        width: 90%;
+    }
+    .cont-vista-previa{
+        width: 100%;
+    }
+    .input-nombre-prod{
+        width: 100%;
+    }
+    .img-vista-previa{
+        width: 50px;
+        height: 50px;
+    }
+    .input-crea-descrip{
+        width: 100%;
+        min-height: 200px;
+        height: auto;
+    }
+    .cont-promo-desc{
+        flex-direction: column;
+        align-items: start;
+    }
+    .cont-promo{
+        width: 100%;
+    }
+    .cont-desc{
+        width: 100%;
+        align-items: start;
+        margin-top: 10px;
+    }
+    .input-crea-desc{
+        width: 60px;
+    }
+    .btn-crea-prod{
+        width: 80%;
+        height: 30px;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .form-crea-prod{
+        width: 85%;
+    }
+    .cont-desc{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .input-crea-desc{
+        width: 30%;
+    }
+}

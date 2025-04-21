@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
+
 import { NavLink } from 'react-router-dom';
-import { AppContext } from '../../Context';
 import MenuHamburguesa from '../MenuHamburguesa';
 import Logo from '../../Images/LOGO.png';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LogoutIcon from '@mui/icons-material/Logout';
 import './styles.css';
-
+import { AppContext } from '../../Context';
 
 function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
@@ -52,6 +52,14 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
                 <div className='col-2-navbarInf'>
                     <ul className='ul-navbar-Inf'>
+                        {
+                            usuario?.user?.isAdmin === true &&
+                            <li>
+                                <NavLink to='/creaProd'>
+                                    Crea producto
+                                </NavLink>
+                            </li>
+                        }
                         <li className='item-nav'>Tratamientos</li>
                         <li className='item-nav'>Productos</li>
                         <li className='item-nav'>Testimonios</li>
@@ -64,7 +72,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                 <div className='col-3-navbarInf'>
                     <div className='cont-registrate'>
                         {
-                            usuario?.user.nombre ?
+                            usuario?.user?.nombre ?
                                 <ul className='ul-nav-med'>
                                     <li
                                         className='navbar-item-admin'
@@ -91,7 +99,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                     {/* menú Admin */}
                     <div className='cont-registrate'>
                     {
-                        usuario?.user.isAdmin && (
+                        usuario?.user?.isAdmin && (
                             <ul className='ul-nav-med'>
                                     <li
                                         className='navbar-item-admin'
@@ -104,10 +112,10 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                             muestraMenuAdmin  && (
                                                 <ul className='dropdown-menu-admin'>
                                                     <li className='dropdown-item-admin'>
-                                                        <NavLink to='/actualizarContraseña' className='link-navbar-admin'>Crear producto</NavLink>
+                                                        <NavLink to='/creaProd' className='link-navbar-admin'>Crear producto</NavLink>
                                                     </li>
                                                     <li className='dropdown-item-admin'>
-                                                        <NavLink to='/actualizarContraseña' className='link-navbar-admin'>Listar productos</NavLink>
+                                                        <NavLink to='/listarProds' className='link-navbar-admin'>Listar productos</NavLink>
                                                     </li>
                                                 </ul>
                                             )
@@ -120,7 +128,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                     {/* iniciar ses */}
                     <div className='cont-login'>
                         {
-                            usuario?.user.nombre ?
+                            usuario?.user?.nombre ?
                                 <button
                                     onClick={() => { handleLogOut() }}
                                     style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}

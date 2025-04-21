@@ -1,0 +1,6 @@
+/* responsive */
+@media screen and (max-width: 500px) {
+    .title-crea-prod{
+        font-size: 18px;
+    }
+}
