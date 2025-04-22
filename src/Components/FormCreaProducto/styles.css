@@ -26,20 +26,18 @@
 .cont-precio-cat-stock{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.cont-precio-cat{
-    width: 30%;
+.cont-precio{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: start;
+    margin-right: 10px;
 }
 .cont-promo{
-    width: 50%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -54,17 +52,17 @@
 .label-prod{
     font-size: 20px;
 }
-.input-nombre-prod,
-.input-crea-precio,
-.input-crea-cat,
-.input-crea-stock{
+.input-nombre-prod{
     width: 100%;
     font-size: 20px;
+    padding: 3px 5px;
     border-radius: 5px;
-    border: 1px solid #6c6b6b;
+    border: none;
 }
+.input-crea-precio,
+.input-crea-stock,
 .input-crea-desc{
-    width: 30%;
+    width: 100px;
     font-size: 20px;
     border-radius: 5px;
     border: 1px solid #6c6b6b;
@@ -90,24 +88,10 @@
     height: 100px;
     margin-right: 5px;
 }
-.btn-elimina-img{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.img-vista-previa{
+.img-previa{
     width: 100px;
     height: 100px;
-    border: 1px solid #000;
     border-radius: 10px;
-    margin-right: 3px;
 }
 .cont-promo-desc,
 .cont-agotado{

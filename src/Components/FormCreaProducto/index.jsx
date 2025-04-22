@@ -11,7 +11,7 @@ function FormCreaProducto({onSubmit, operacion}) {
     const {id} = useParams();
     const [nombre, setNombre] = React.useState(''); 
     const [precio, setPrecio] = React.useState(null);
-    const [imagen, setImagen] = React.useState(null);
+    const [imagen, setImagen] = React.useState(null); 
     const [vistaPrevia, setVistaPrevia] = React.useState(null);
     const [stock, setStock] = React.useState(1);
     const [enPromo, setEnPromo] = React.useState(false);
@@ -57,10 +57,6 @@ function FormCreaProducto({onSubmit, operacion}) {
         }else{
             setAgotado(false);
         }
-    };
-    //elimina imagen del array de imágenes
-    const handleEliminaImg = (index) => {
-        
     };
     //funcion validar datos
     const validarDatos = () => {
@@ -229,7 +225,7 @@ function FormCreaProducto({onSubmit, operacion}) {
             </div>
             {/* precio - categoría - stock*/}
             <div className='cont-precio-cat-stock'>
-                <div className='cont-precio-cat'>
+                <div className='cont-precio'>
                     <label className='label-prod'>Precio</label>
                     <input
                         type='text'
@@ -240,7 +236,7 @@ function FormCreaProducto({onSubmit, operacion}) {
                     />
                     {errors.precio && <p className='error'>{errors.precio}</p>}
                 </div>
-                <div className='cont-precio-cat'>
+                <div className='cont-precio'>
                     <label className='label-prod'>Stock</label>
                     <input
                         type='number'
@@ -251,6 +247,18 @@ function FormCreaProducto({onSubmit, operacion}) {
                         className='input-crea-stock'
                     />
                     {errors.stock && <p className='error'>{errors.stock}</p>}
+                </div>
+                {/* agotado */}
+                <div className='cont-estaAgotado'>
+                    <label className='label-prod'>¿Está agotado?</label>
+                    <input 
+                        type='checkbox' 
+                        name='agotado'
+                        value={agotado}
+                        checked={agotado}
+                        onChange={handleChangeAgotado}
+                        className='check-crea-promo' 
+                    />
                 </div>
             </div>
             {/* está en Promo */}
@@ -277,26 +285,7 @@ function FormCreaProducto({onSubmit, operacion}) {
                     />
                 </div>
             </div>
-            {/* Agotado */}
-            <div className='cont-promo-desc'>
-                <div className='cont-promo'>
-                    <label className='label-prod'>¿Está agotado?</label>
-                    <input 
-                        type='checkbox' 
-                        name='agotado'
-                        value={agotado}
-                        checked={agotado}
-                        onChange={handleChangeAgotado}
-                        className='check-crea-promo' 
-                    />
-                </div>
-            </div>
-            {/* descripción */}
-            <div className='cont-descripcion'>
-                <label className='label-prod'>Descripción</label>
-                {/* cont para texto editable */}
-                <div ref={quillRef} className="input-crea-descrip"></div>
-            </div>
+            
             {/* botón crear/modificar */}
             <button type='submit' className='btn-crea-prod'>
                 {

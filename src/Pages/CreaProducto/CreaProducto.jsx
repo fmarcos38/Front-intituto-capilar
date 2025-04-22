@@ -1,54 +1,53 @@
-import React, { useContext } from 'react'
-import {AppContext} from '../../Context';
+import React, { useContext } from 'react';
+import { AppContext } from '../../Context';
 import FormCreaProducto from '../../Components/FormCreaProducto';
 import Swal from 'sweetalert2';
 import './styles.css';
 
-
-function CreaProducto() { 
-
+function CreaProducto() {
     const context = useContext(AppContext);
 
-    const onSubmit = async(data) => {        
-        const formData = new FormData(); //creo el formData
-        formData.append('data', JSON.stringify(data)); //agrego los datos del producto
-        //agrego las imagenes
-        data.imagenes.forEach((imagen) => {
-            formData.append('imagenes', imagen);
-        });
+    const onSubmit = async (data) => {
+        const formData = new FormData();
+        formData.append('data', JSON.stringify(data));
         
-        try{
-            const response = await fetch('http://localhost:3002/producto', {
+        // Si existe imagen, la agregamos 
+        if (data.imagen) {
+            formData.append('imagen', data.imagen);
+        }
+        console.log("data:", formData.data)
+        try {
+            const response = await fetch('http://localhost:3003/producto', {
                 method: 'POST',
                 body: formData,
             });
-            if(response.ok){
+
+            if (response.ok) {
                 Swal.fire({
                     title: 'Producto creado con éxito',
                     icon: 'success',
                     confirmButtonText: 'Aceptar',
                     confirmButtonColor: '#3f51b5',
                 });
-            }else{
-                    Swal.fire({
-                        title: 'Error al crear el producto',
-                        icon: 'error',
-                        confirmButtonText: 'Aceptar',
-                        confirmButtonColor: '#3f51b5',
-                    });
+            } else {
+                Swal.fire({
+                    title: 'Error al crear el producto',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar',
+                    confirmButtonColor: '#3f51b5',
+                });
             }
-        }catch(error){
+        } catch (error) {
             console.error('Error al crear producto:', error);
         }
-    }
+    };
 
-    return context.dataUser &&
-    (
+    return context.dataUser && (
         <div className='page cont-crea-prod-page'>
             <h1 className='title-crea-prod'>Crea un nuevo producto</h1>
-            <FormCreaProducto onSubmit={onSubmit}/>
+            <FormCreaProducto onSubmit={onSubmit} />
         </div>
-    )
+    );
 }
 
-export default CreaProducto
+export default CreaProducto;
