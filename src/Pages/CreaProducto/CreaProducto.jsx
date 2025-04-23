@@ -15,11 +15,18 @@ function CreaProducto() {
         if (data.imagen) {
             formData.append('imagen', data.imagen);
         }
-        console.log("data:", formData.data)
+        /* para que viene del comp hijo */
+        for (let pair of formData.entries()) {
+            console.log(`${pair[0]}:`, pair[1]);
+        }
+        
         try {
             const response = await fetch('http://localhost:3003/producto', {
                 method: 'POST',
                 body: formData,
+                headers: {
+                    Accept: 'application/json',
+                }
             });
 
             if (response.ok) {

@@ -127,6 +127,11 @@ function FormCreaProducto({onSubmit, operacion}) {
                     porcentajeDescuento: descuento,
                     agotado,
                 };
+                if (existeProd) {
+                    setErrors(prev => ({ ...prev, nombre: 'Este producto ya existe' }));
+                    return;
+                }
+                
                 onSubmit(data);
                 limpiarInputs();
             }
@@ -180,13 +185,22 @@ function FormCreaProducto({onSubmit, operacion}) {
             quillRef.current.__quillInstance = quillInstance;
         }
     }, []);
-    //efecto para traer prod por nombre SI existe
+    // Este dispara la búsqueda por nombre
     useEffect(() => {
-        if(operacion === 'crear' && nombre){
+        if (operacion === 'crear' && nombre) {
             dispatch(getProductoPorNombre(nombre));
-            setExisteProd(existeProducto.msg);
         }
-    }, [dispatch, existeProducto.msg, nombre, operacion]);
+    }, [dispatch, nombre, operacion]);
+
+    // Este escucha cambios en el resultado
+    useEffect(() => {
+        if (existeProducto?.msg) {
+            setExisteProd(existeProducto.msg);
+        } else {
+            setExisteProd(null);
+        }
+    }, [existeProducto]);
+
 
 
     return (

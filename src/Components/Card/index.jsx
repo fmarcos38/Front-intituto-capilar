@@ -5,8 +5,8 @@ import BotonFavorito from '../BotonFavorito';
 import BotonAgregaalCarrito from '../BotonAgregaAlCarrito';
 import './styles.css';
 
-function Card({id, nombre, precio, imagenes, agotado, enPromo, porcentajeDescuento, stock}) {
-
+function Card({id, nombre, precio, imagen, agotado, enPromo, porcentajeDescuento, stock}) {
+console.log("imgP:", imagen)
     const [showDetail, setShowDetail] = React.useState(false); //estado para hover de la imgn - mostrando detalle
 
     return (
@@ -25,7 +25,7 @@ function Card({id, nombre, precio, imagenes, agotado, enPromo, porcentajeDescuen
                 >
                     {/* imagen */}
                     <div className='cont-carrusel-card'>
-                        <img src={imagenes[0]} alt={nombre} className='img-card' />
+                        <img src={imagen} alt={nombre} className='img-card' />
                     </div>
 
                     {/* msj detalle si hay hover */}

@@ -41,7 +41,7 @@ export default function rootReducer (state = initialStore, action) {
         case GET_PRODUCTOS:
             return {
                 ...state,
-                productos: action.payload.prodsNormalizados,
+                productos: action.payload.productos,
                 totProds: action.payload.total,
                 loading: false
             }

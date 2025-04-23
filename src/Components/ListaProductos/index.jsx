@@ -15,7 +15,7 @@ function ListaProductos({productos}) {
                         id={p.id}
                         nombre={p.nombre} 
                         precio={p.precio} 
-                        imagenes={p.imagenes}
+                        imagen={p.imagen}
                         agotado={p.agotado}
                         enPromo={p.enPromo}
                         porcentajeDescuento={p.porcentajeDescuento}
