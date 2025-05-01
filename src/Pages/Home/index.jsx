@@ -76,9 +76,9 @@ function Home() {
       </div>
       
       {/* carrusel */}
-      <div className='cont-carrusel-home'>
-        {/* <Carrusel imagenes={arrImgsMostrar} /> */} {/* pasar productos */}
-      </div>
+      {/* <div className='cont-carrusel-home'>
+        <Carrusel imagenes={arrImgsMostrar} />
+      </div> */}
       
       {/* titulo ofertas y Lista prods en oferta*/}
       <div className='cont-ofertas-home'>
@@ -94,22 +94,6 @@ function Home() {
           <h2>Productos</h2>
         </div>
         <div className='cont-filtros-lista-prods'>
-          {/* filtros */}
-          <div className='cont-filtros-home'>
-            <Filtros
-              marca={marca}
-              setMarca={setMarca}
-              categoria={categoria}
-              setCategoria={setCategoria}
-              enPromo={enPromo}
-              setPromo={setPromo}
-              precioMin={precioMin}
-              setPrecioMin={setPrecioMin}
-              precioMax={precioMax}
-              setPrecioMax={setPrecioMax}
-              setPaginaActual={setPaginaActual}
-            />
-          </div>
           {/* lista productos */}
           <div className='cont-lista-productos-home'>
             <ListaProductos productos={productos} />

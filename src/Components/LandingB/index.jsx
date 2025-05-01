@@ -1,5 +1,4 @@
 import React from 'react';
-import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import './styles.css';
 
 function LandingB() {
@@ -10,39 +9,36 @@ function LandingB() {
 
     return (
         <div className='cont-landing-B'>
-            <div className='cont-titulo-landB'>
-                <h2 className='titulo-landB'>SOBRE NOSOTROS</h2>
-            </div>
             <div className='cont-texto-Y-img-landB'>
-                <p className='texto-landB'>
-                    El Gam ofrecemos soluciones personalizadas para hombres y mujeres que buscan mejorar la salud y apariencia de su cabello.
-                    Contamos con un equipo de profesionales expertos en tratamientos capilares avanzados, contamos con tecnología de última generación y productos de alta calidad.
-                    Tenemos nuestra linea propia de productos capilares, formulados con ingredientes naturales y libres de parabenos y sulfatos.
-                    Brindan un enfoque integral que abarca desde la prevención hasta la recuperación capilar.
-                    Ofrecemos seguimiento continuo para asegurar resultados duraderos.
-                    El Instituto se destaca por su compromiso con la satisfacción del cliente y su enfoque ético y profesional.
+                <h2 className='titulo-landB'>SOBRE NOSOTROS</h2>
+                <p className='texto-landB-titulo'>
+                    "Recuperá tu cabello,  recuperá tu confianza"
+                    En el instituto capilar GAM entendemos la importancia de tener tu cabello saludable y radiante. Somos expertos en la recuperación capilar dedicamos nuestro trabajo a mejorar la salud de  tu cabello y que vuelvas a verte bien frente a un espejo.
                 </p>
+                <p className='texto-landB'>. Tratamientos personalizados para todo tipo de problemática capilar.</p>
+                <p className='texto-landB'>. Técnicas avanzadas para la recuperación del cabello.</p>
+                <p className='texto-landB'>. Línea propia de productos de uso tópico desarrollados a base de activos vegetales sin ningún tipo de contraindicacion.</p>
+                <p className='texto-landB'>. Asesoramiento   experto para encontrar el tratamiento adecuado.</p>
+                <p className='texto-landB-titulo'><b>Nuestros objetivos:</b></p>
+                <p className='texto-landB'>. Recuperar tu cabello.</p>
+                <p className='texto-landB'>. Recuperar tu confianza y autoestima.</p>
+                <p className='texto-landB'>. Ofrecerte un servicio personalizado y atento.</p>    
+                <p className='texto-landB-titulo'><b>Porque elegirnos:</b></p>    
+                <p className='texto-landB'>. Tenemos más de 20 años de experiencia en la recuperación capilar.</p>    
+                <p className='texto-landB'>. Utilizamos lo mejores productos y técnicas de trabajo para lograr los mejores resultados.</p>    
+                <p className='texto-landB'>. Estamos comprometidos con tu satisfacción y bienestar.</p>    
+                <p className='texto-landB'>
+                    Ven a visitarnos y descubre como podemos ayudarte a recuperar tu cabello y tu confianza. 
+                    Instituto capilar GAM....la ciencia está de tu lado!!!
+                </p>                
             </div>
             <div className='cont-card-turno'>
-                <div className='card-turno'>
-                    <div className='cont-icono-turno'>
-                        <PermContactCalendarIcon sx={{fontSize:'50px'}}/>
-                    </div>
-                    <div className='cont-titulo-turno'>
-                        <h3 className='titulo-turno'>Solicitá tu turno</h3>
-                    </div>
-                    <div className='cont-texto-turno'>
-                        <p className='p-turno-card'>
-                            Contactanos para coordinar un turno en el horario de tu preferencia.
-                        </p>
-                    </div>
-                    <div className='cont-btn-turno'>
-                        <button onClick={handleOnClickBTN} className='btn-turno-whtsApp'>Contactanos</button>
-                    </div>
+                <div className='cont-btn-turno'>
+                    <button onClick={handleOnClickBTN} className='btn-turno-whtsApp'>Contactanos</button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default LandingB
+export default LandingB;

@@ -6,7 +6,7 @@ function ListaOfertas({ productos }) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleProducts, setVisibleProducts] = useState([]);
-    const [productsPerPage, setProductsPerPage] = useState(productos.total < 3 ? productos.total : 3);
+    const [productsPerPage, setProductsPerPage] = useState(productos.total-1);
 
     const handlePrevClick = () => {
         // No hacer nada si ya estamos en el primer conjunto de productos
@@ -16,7 +16,7 @@ function ListaOfertas({ productos }) {
 
     const handleNextClick = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex + productsPerPage >= productos.prodsNormalizados.length ? 0 : prevIndex + productsPerPage
+            prevIndex + productsPerPage >= productos?.total ? 0 : prevIndex + productsPerPage
         );
     };
 
@@ -41,26 +41,28 @@ function ListaOfertas({ productos }) {
     }, []);
 
     useEffect(() => {
-        setVisibleProducts(productos.prodsNormalizados?.slice(currentIndex, currentIndex + productsPerPage));
+        setVisibleProducts(productos.productos?.slice(currentIndex, currentIndex + productsPerPage));
     }, [currentIndex, productsPerPage, productos]);
-
+    
     return (
         <div className="lista-ofertas-container">
             <button className="arrow-button" onClick={handlePrevClick} disabled={currentIndex === 0}>←</button>
             <div className="lista-ofertas">
-                {visibleProducts?.map((producto, index) => (
-                    <Card
-                        key={index}
-                        id={producto.id}
-                        nombre={producto.nombre}
-                        precio={producto.precio}
-                        imagenes={producto.imagenes}
-                        agotado={producto.agotado}
-                        enPromo={producto.enPromo}
-                        porcentajeDescuento={producto.porcentajeDescuento}
-                        stock={producto.stock}
-                    />
-                ))}
+                {
+                    visibleProducts?.map((producto, index) => (
+                        <Card
+                            key={index}
+                            id={producto.id}
+                            nombre={producto.nombre}
+                            precio={producto.precio}
+                            imagen={producto.imagen}
+                            agotado={producto.agotado}
+                            enPromo={producto.enPromo}
+                            porcentajeDescuento={producto.porcentajeDescuento}
+                            stock={producto.stock}
+                        />
+                    ))
+                }
             </div>
             <button className="arrow-button" onClick={handleNextClick}>→</button>
         </div>

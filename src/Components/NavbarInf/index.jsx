@@ -52,14 +52,6 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
                 <div className='col-2-navbarInf'>
                     <ul className='ul-navbar-Inf'>
-                        {
-                            usuario?.user?.isAdmin === true &&
-                            <li>
-                                <NavLink to='/creaProd'>
-                                    Crea producto
-                                </NavLink>
-                            </li>
-                        }
                         <li className='item-nav'>Tratamientos</li>
                         <li className='item-nav'>Productos</li>
                         <li className='item-nav'>Testimonios</li>

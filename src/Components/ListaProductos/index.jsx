@@ -11,7 +11,8 @@ function ListaProductos({productos}) {
             {
                 productos.length > 0 ?
                 productos?.map(p => (
-                    <Card key={p.id} 
+                    <Card 
+                        key={p.id} 
                         id={p.id}
                         nombre={p.nombre} 
                         precio={p.precio} 

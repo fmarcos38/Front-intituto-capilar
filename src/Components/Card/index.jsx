@@ -6,7 +6,7 @@ import BotonAgregaalCarrito from '../BotonAgregaAlCarrito';
 import './styles.css';
 
 function Card({id, nombre, precio, imagen, agotado, enPromo, porcentajeDescuento, stock}) {
-console.log("imgP:", imagen)
+
     const [showDetail, setShowDetail] = React.useState(false); //estado para hover de la imgn - mostrando detalle
 
     return (
