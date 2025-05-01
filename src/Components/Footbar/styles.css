@@ -13,40 +13,29 @@
     color: #fff;
     background-color: #000;
 }
-/* estilos cont-suscripción */
-.cont-suscripcion{
-    width: 60%;
+/* estilo linea */
+.lineaSup,
+.lineaInf{
+    width: 90%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.h2-suscripcion{
-    font-size: 20px;
-}
-.input-suscripcion{
-    width: 300px;
-    font-size: 20px;
-    margin-left: 10px;
-}
-.btn-suscripcion{
-    font-size: 20px;
-    color: #fff;
-    border: none;
-    padding: 3px;
-    background-color: var(--color-azul);
-}
-/* estilo linea */
-.linea{
-    width: 90%;
-    height: 1px;
-    background-color: #fff;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 /* estilos cont-info */
 .cont-info{
     width: 80%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
+    padding: 10px 0;
+}
+.logo-foot{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
 }
 .cont-col-1,
 .cont-col-2,
@@ -69,7 +58,11 @@
 .enlaces-info-foot:hover{
     color: var(--color-azul);
 }
-
+.cont-item-email{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* responsive */
 @media screen and (max-width: 768px){
     .cont-footbar{

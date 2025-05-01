@@ -39,7 +39,9 @@ function Card({id, nombre, precio, imagen, agotado, enPromo, porcentajeDescuento
             }
             {/* data */}
             <div className='cont-info-card'>
-                <p className='nombre-pala'>{nombre}</p>
+                <div className='cont-nombre-prod'>
+                    <p className='nombre-pala'>{nombre}</p>
+                </div>
                 {/* precio */}
                 <div className='cont-precio-desc'>
                     {
@@ -56,7 +58,9 @@ function Card({id, nombre, precio, imagen, agotado, enPromo, porcentajeDescuento
                     }
                 </div>
                 {/* botón agrega al carrito */}
-                <BotonAgregaalCarrito id={id} stock={stock}/>
+                <div className='cont-btn-carrito'>
+                    <BotonAgregaalCarrito id={id} stock={stock}/>
+                </div>
             </div>
         </div>
     )

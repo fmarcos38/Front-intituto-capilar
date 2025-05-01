@@ -5,10 +5,8 @@ import { AppContext } from '../../Context';
 import LandingA from '../../Components/LandingA';
 import LandingB from '../../Components/LandingB';
 import CarritoCompras from '../../Components/CarritoCompras';
-//import Carrusel from '../../Components/CarruselTemporizador';
 import ListaOfertas from '../../Components/ListaOfertas';
 import ListaProductos from '../../Components/ListaProductos';
-import Filtros from '../../Components/Filtros';
 import Paginacion from '../../Components/Paginacion';
 import './styles.css';
 
@@ -18,12 +16,6 @@ function Home() {
   const productos = useSelector((state) => state.productos);
   const totalProductos = useSelector((state) => state.totProds);
   const productosEnOferta = useSelector(state => state.enPromo); //productos en oferta
-  //const arrImgsMostrar = ; //prods para el carrusel a mostrar en el carrusel
-  const [marca, setMarca] = React.useState('');
-  const [categoria, setCategoria] = React.useState('');
-  const [enPromo, setPromo] = React.useState(false);
-  const [precioMin, setPrecioMin] = React.useState(10);
-  const [precioMax, setPrecioMax] = React.useState(1000000);
   const dispatch = useDispatch();
   const context = useContext(AppContext);
   const data = context.dataUser;
@@ -47,8 +39,8 @@ function Home() {
 
   //efecto para traer los productos
   useEffect(() => {
-    dispatch(getProductos(limit, offset, categoria, marca, enPromo, '', precioMin, precioMax));
-  }, [categoria, dispatch, limit, marca, offset, precioMax, precioMin, enPromo]);
+    dispatch(getProductos(limit, offset,));
+  }, [dispatch, limit,offset]);
 
   //efecto para traer carrito del usuario SI hay usuario logueado
   useEffect(() => {
@@ -75,11 +67,6 @@ function Home() {
         </h1>
       </div>
       
-      {/* carrusel */}
-      {/* <div className='cont-carrusel-home'>
-        <Carrusel imagenes={arrImgsMostrar} />
-      </div> */}
-      
       {/* titulo ofertas y Lista prods en oferta*/}
       <div className='cont-ofertas-home'>
         <h2 className='titulo-ofertas'>APROVECHA NUESTRAS OFERTAS</h2>
@@ -88,14 +75,13 @@ function Home() {
         </div>
       </div>
       
-      {/* filtros y lista prods */}
+      {/* lista prods */}
       <div className='lista-productos-home'>
         <div className='cont-titulo-lista-prods'>
-          <h2>Productos</h2>
+          <h2>Nuestros Productos</h2>
         </div>
+        {/* lista productos */}
         <div className='cont-filtros-lista-prods'>
-          {/* lista productos */}
-          <div className='cont-lista-productos-home'>
             <ListaProductos productos={productos} />
             {/* paginación */}
             <Paginacion              
@@ -104,7 +90,6 @@ function Home() {
               totalProductos={totalProductos}
               prooductosPorPagina={prooductosPorPagina}
             />
-          </div>
         </div>
       </div>
 

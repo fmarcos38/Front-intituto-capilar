@@ -90,7 +90,20 @@
     justify-content: center;
     align-items: center;
     border-radius: 0 0 10px 10px;
-    background-color: rgb(234, 234, 234);
+    background-color: var(--fondo-navbar);
+}
+.cont-nombre-prod {
+    width: 100%;
+    height: 50%;
+}
+.cont-precio-desc {
+    height: 25%;
+}
+.cont-btn-carrito {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .prod-agotado{
     position: absolute;
@@ -109,9 +122,10 @@
     border-radius: 10px;
 }
 .nombre-pala{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     margin: 0;
+    padding: 5px 10px;
 }
 .cont-precio-desc{
     width: 100%;

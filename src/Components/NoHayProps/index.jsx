@@ -1,5 +1,5 @@
 import React from 'react'
-import imgNoHayProds from '../../Images/noHayProds.jpg';
+import imgNoHayProds from '../../Images/mujerP4.jpg';
 import './estilos.css';
 
 

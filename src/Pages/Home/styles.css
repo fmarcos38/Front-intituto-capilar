@@ -58,6 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
     background-color: rgb(14, 14, 14);
 }
 /* ofertas */
@@ -79,32 +80,8 @@
     justify-content: start;
     align-items: center;
     margin-bottom: 20px;
-}
-.cont-filtros-lista-prods{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-}
-/* estilos filtros */
-.cont-filtros-home{
-    width: 20%;
-    position: sticky;
-    top: 10%; /* La distancia desde la parte superior de la ventana */
-    max-height: calc(100vh - 20px); /* Ajusta la altura máxima para evitar que salga del contenedor */
-    overflow-y: auto; /* Permite el desplazamiento dentro de la barra lateral si el contenido es más largo */
-    background-color: turquoise; 
     border-radius: 5px;
-}
-/* estilos titulo y lista prods */
-.cont-lista-productos-home{
-    width: 80%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    background-color: rgb(209, 208, 207);
 }
 .titulo-lista-paletas{
     color: white;
