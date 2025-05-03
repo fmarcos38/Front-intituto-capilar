@@ -11,6 +11,7 @@ import CreaProducto from './Pages/CreaProducto/CreaProducto';
 import ListaProdsAdminPage from './Pages/ListaProdsAdminPage';
 import EditaProd from './Pages/EditaProd';
 import './App.css';
+import ModificaDatosUsuario from './Pages/ModificaDatosUsuario';
 
 
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/registrarse' element={<RegistrarsePage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/recuperarDatosUsuario' element={<RecuperarDatosUsuario />} />
+            <Route path='/modificarDatosUsuario' element={<ModificaDatosUsuario/>} />
             {/* rutas admin */}
             <Route path='/creaProd' element={<CreaProducto/>} />
             <Route path='/listarProds' element={<ListaProdsAdminPage/>} />

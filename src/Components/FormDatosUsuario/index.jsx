@@ -5,7 +5,8 @@ import './styles.css';
 function FormDatosUsuario({ 
   nombre, apellido, email, password, dni, area, numTel, calle, 
   numero, piso, depto, codigoPostal, provincia, localidad, 
-  comentarios, errors, onClickVerContraseña, handleChange, handleSubmit, registrarse }) {
+  comentarios, errors, onClickVerContraseña, handleChange, handleSubmit, registrarse, operacion 
+}) {
 
   return (
     <form onSubmit={handleSubmit} className='cont-form-datos-usuario'>      
@@ -151,7 +152,7 @@ function FormDatosUsuario({
       
       <button type='onSubmit' className='btn-continuar-compra'>
         {
-          registrarse ? 'Registrarse' : 'Modificar datos de entrega'
+          operacion !== 'modificar' ? 'Registrarse' : 'Modificar datos'
         }
       </button>
     </form>

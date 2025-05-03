@@ -77,7 +77,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                             muestraCambiarPass && (
                                                 <ul className='dropdown-menu-usuario'>
                                                     <li className='dropdown-item-admin'>
-                                                        <NavLink to='/actualizarContraseña' className='link-navbar-usuario'>
+                                                        <NavLink to='/modificarDatosUsuario' className='link-navbar-usuario'>
                                                             Cambiar contraseña
                                                         </NavLink>
                                                     </li>

@@ -77,7 +77,7 @@ export const resetUsuario = () => {
 }
 
 //modifica usuario
-export const modificaUsuario = (id, data) => { console.log('id', id);
+export const modificaUsuario = (id, data) => {
     return async function() { console.log('data', data);
         const resp = await axios.put(`${URL}/usuario/modifica/${id}`, data);
         return resp.data;
@@ -92,7 +92,8 @@ export const modificaContraseña = (id, password) => {
         dispatch({type: 'MODIFICA_CONTRASEÑA', payload: resp.data}); 
     }
 }
-//-----------------favoritos---------------------
+
+//-----------------FAVORITOS---------------------
 export const getFavoritos = (id) => {
     return async function(dispatch) { 
         const resp = await axios.get(`${URL}/usuario/favoritos/${id}`);
@@ -114,7 +115,7 @@ export const eliminaFavorito = (id, idProd) => {
     }
 }
 
-//-----------------carrito----------------------
+//-----------------CARRITO----------------------
 //trae carrito
 export const getCarrito = (id) => { 
     return async function(dispatch) { 
@@ -144,7 +145,7 @@ export const eliminarDelCarrito = (clienteId) => {
 };
 
 
-//-------producto-----------------------------
+//-------PRODUCTO-----------------------------
 //trae productos
 export const getProductos = (limit, offset, categoria, marca, enPromo, palabra, precioMin, precioMax) => {
     return async function(dispatch) { 

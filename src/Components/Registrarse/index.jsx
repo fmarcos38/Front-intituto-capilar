@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
-import { registrarse } from '../../Redux/Actions';
+import React, {useEffect, useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { modificaUsuario, registrarse } from '../../Redux/Actions';
 import Swal from 'sweetalert2';
 import LoginGoogle from '../LoginGoogle';
 import FormDatosUsuario from '../FormDatosUsuario';
 import './styles.css';
 
-function Registrarse() {
+function Registrarse({operacion}) {
 
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
@@ -25,6 +25,8 @@ function Registrarse() {
     const [comentarios, setComentarios] = useState('');
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
+    //obtengo los datos del user SI es q ya está logueado; para pre carga de la vista modificar
+    const userLog = useSelector(state => state.dataUsuario);
 
     const handleChange = (e) => {
             const { id, value } = e.target;
@@ -105,7 +107,7 @@ function Registrarse() {
         };
 
         const nuevosErrores = Object.entries(campos).reduce((acc, [key, value]) => {
-            if (!value || value.trim() === '') {
+            if (!value || String(value).trim() === '') {
                 acc[key] = ` es requerido.`;
             }
             return acc;
@@ -154,7 +156,8 @@ function Registrarse() {
                 },
                 comentarios,
             });
-            dispatch(registrarse(data))
+            if(operacion === 'modificar'){
+                dispatch(modificaUsuario(data))
                 .then((response) => {
                     if (response?.msg === 'success') {
                         Swal.fire({
@@ -182,8 +185,56 @@ function Registrarse() {
                         timer: 1500,
                     });
                 });
+            }else{
+                dispatch(registrarse(data))
+                .then((response) => {
+                    if (response?.msg === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Registrado correctamente',
+                            timer: 1500,
+                        });
+                        limpiarCampos();
+                        window.location.href = '/login';
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: response?.data?.msg || 'Error desconocido',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error del servidor:", error.response?.data || error.message);
+                    Swal.fire({
+                        icon: 'error',
+                        title: error.response?.data?.msg || 'Error al conectar con el servidor',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                });
+            }
         }
     };
+
+    useEffect(()=>{
+        if(operacion === 'modificar'){
+            setNombre(userLog.nombre);
+            setApellido(userLog.apellido);
+            setDni(userLog.dni);
+            setEmail(userLog.email);
+            setNumTel(userLog.telefono.numero);
+            setArea(userLog.telefono.area);
+            setCalle(userLog.direccion.calle);
+            setNumero(userLog.direccion.numero);
+            setPiso(userLog.direccion.piso);
+            setDepto(userLog.direccion.depto);
+            setCodigoPostal(userLog.direccion.codigoPostal);
+            setProvincia(userLog.direccion.provincia);
+            setLocalidad(userLog.direccion.localidad);
+        }
+    },[operacion, userLog.apellido, userLog.direccion.calle, userLog.direccion.codigoPostal, userLog.direccion.depto, userLog.direccion.localidad, userLog.direccion.numero, userLog.direccion.piso, userLog.direccion.provincia, userLog.dni, userLog.email, userLog.nombre, userLog.telefono.area, userLog.telefono.numero]);
 
     return (
         <div className='cont-registrarse'>
@@ -209,10 +260,14 @@ function Registrarse() {
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 registrarse={true}
+                operacion={operacion}
             />
-            <div className='cont-btn-registrarse'>
-                <LoginGoogle />
-            </div>
+            {
+                operacion !== 'modificar' && 
+                <div className='cont-btn-registrarse'>
+                    <LoginGoogle />
+                </div>
+            }
         </div>
     )
 }
