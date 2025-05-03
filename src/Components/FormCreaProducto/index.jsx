@@ -8,7 +8,7 @@ import './styles.css';
 
 function FormCreaProducto({onSubmit, operacion}) {
 
-    const {id} = useParams();
+    const {_id} = useParams();
     const [nombre, setNombre] = React.useState(''); 
     const [precio, setPrecio] = React.useState(null);
     const [imagen, setImagen] = React.useState(null); 
@@ -141,9 +141,9 @@ function FormCreaProducto({onSubmit, operacion}) {
     //efecto para disparar la acción de traer el producto por id SI operación = editar
     useEffect(() => {
         if (operacion === 'editar') {
-            dispatch(getProductoById(id));
+            dispatch(getProductoById(_id));
         }
-    }, [dispatch, id, operacion]);
+    }, [dispatch, _id, operacion]);
     //efecto para iniciar los inputs en caso de editar
     useEffect(() => {
         if (operacion === 'editar' && prod) {

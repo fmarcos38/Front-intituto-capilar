@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { deleteProducto } from '../../redux/actions/actions';
+import { deleteProducto } from '../../Redux/Actions';
 import BotonEliminaProp from '../BotonEliminaProd';
 import EditIcon from '@mui/icons-material/Edit';
 import Swal from 'sweetalert2';
@@ -47,15 +47,15 @@ function ListaProductosAdmin({productos}) {
                 <tbody>
                     {
                         productos?.map(p => (
-                            <tr key={p.id}>
-                                <td><img src={p.imagenes[0]} alt={p.nombre} className='img-tabla-prod'/></td>
+                            <tr key={p._id}>
+                                <td><img src={p.imagen} alt={p.nombre} className='img-tabla-prod'/></td>
                                 <td>{p.nombre}</td>
                                 <td>{p.precio}</td>                                
                                 <td>
-                                    <BotonEliminaProp handleOnClick={() => handleOnClick(p.id)} />
+                                    <BotonEliminaProp handleOnClick={() => handleOnClick(p._id)} />
                                 </td>
                                 <td>
-                                    <NavLink to={`/admin/editaProd/${p.id}`}>
+                                    <NavLink to={`/editaProd/${p._id}`}>
                                         <button>
                                             <EditIcon />
                                         </button>

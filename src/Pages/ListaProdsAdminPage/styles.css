@@ -1,0 +1,10 @@
+.cont-lista-prods-admin{
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 80px;
+    box-sizing: border-box;
+}
+.titulo-lista-prods-admin-page{
+    margin: 0;
+}

@@ -77,7 +77,9 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                             muestraCambiarPass && (
                                                 <ul className='dropdown-menu-usuario'>
                                                     <li className='dropdown-item-admin'>
-                                                        <NavLink to='/actualizarContraseña' className='link-navbar-usuario'>Cambiar contraseña</NavLink>
+                                                        <NavLink to='/actualizarContraseña' className='link-navbar-usuario'>
+                                                            Cambiar contraseña
+                                                        </NavLink>
                                                     </li>
                                                 </ul>
                                             )
@@ -104,10 +106,10 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                             muestraMenuAdmin  && (
                                                 <ul className='dropdown-menu-admin'>
                                                     <li className='dropdown-item-admin'>
-                                                        <NavLink to='/creaProd' className='link-navbar-admin'>Crear producto</NavLink>
+                                                        <NavLink to='/creaProd' className='link-navbar-usuario'>Crear producto</NavLink>
                                                     </li>
                                                     <li className='dropdown-item-admin'>
-                                                        <NavLink to='/listarProds' className='link-navbar-admin'>Listar productos</NavLink>
+                                                        <NavLink to='/listarProds' className='link-navbar-usuario'>Listar productos</NavLink>
                                                     </li>
                                                 </ul>
                                             )

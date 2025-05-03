@@ -143,6 +143,7 @@ export const eliminarDelCarrito = (clienteId) => {
     }
 };
 
+
 //-------producto-----------------------------
 //trae productos
 export const getProductos = (limit, offset, categoria, marca, enPromo, palabra, precioMin, precioMax) => {
