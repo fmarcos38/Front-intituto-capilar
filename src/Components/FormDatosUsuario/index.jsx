@@ -51,14 +51,14 @@ function FormDatosUsuario({
                 <input type="email" id="email" label="Email" value={email} onChange={handleChange} className='input-form-usuario'/>
               </div>
         {
-          registrarse && (
-              <div className='cont-password'>
-                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+          operacion !== 'modificar' && (
+              <div className='cont-passYviewPass'>
+                <div className='cont-password'>
                   <label className='label'>Contraseña</label>
                   {errors.password && <p style={{margin: '0 0 0 5px', fontSize:'10px', color:'red'}}>{errors.password}</p>}
                 </div>
                 <div className='cont-pass-viewPass'>
-                  <input type="password" id='password' value={password} onChange={handleChange} error={errors.password} className='input-form-pass' />
+                  <input type="password" id='password' value={password} onChange={handleChange} error={errors.password} className='input-form-usuario' />
                   <button type='button' className='btn-viewPass' onClick={onClickVerContraseña}>
                     <VisibilityIcon />
                   </button>
@@ -89,7 +89,7 @@ function FormDatosUsuario({
         {/* calle-num-piso-depto */}
         <div className='cont-form-datos-usuario-calle-num-piso-depto'>
           <div className='cont-calle'>
-            <div style={{display: 'flex', flexDirection: 'row',justifyContent:'center', alignItems: 'center'}}>
+            <div style={{display: 'flex', flexDirection: 'row',justifyContent:'start', alignItems: 'center'}}>
               <label className='label'>Calle</label>
               {errors.calle && <p style={{margin: '0 0 0 5px', fontSize:'10px', color:'red'}}>{errors.calle}</p>}
             </div>

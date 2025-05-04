@@ -174,9 +174,9 @@
         width: 8%;
     }
     .logo-navbarInf{
-        position: relative;
-        width: 98%;
-        height: 60px;
+        height: 70px;
+        position: absolute;
+        top: 0px;    
     }
     /* col de items */
     .col-2-navbarInf{
@@ -224,18 +224,18 @@
     .col-2-logo-navbarInf{
         width: 60%;
     }
+    .logo-navbarInf{
+        height: 45px;
+        top: -20px; 
+        left: 65%;
+        border-radius: 10px;
+    }
     .navlink-navbarInf{
         position: relative;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .logo-navbarInf{
-        width: 20%;
-        height: 45px;
-        margin-left: 100px;
-        border-radius: 10px;
     }
     /* col-2 */
     .col-2-navbarInf{
@@ -254,20 +254,18 @@
     .col-1-navbarInf{
         width: 10%;
     }
-    .logo-navbarInf{
-        width: 30%;
-        margin-left: 70px;
-    }
     /* col-2-logo-navbarInf */
     .col-2-logo-navbarInf{
-        width: 55%;
+        width: 35%;
+    }
+    .logo-navbarInf{
+        height: 45px;
+        top: -20px; 
+        left: 65%;
+        border-radius: 10px;
     }
     /* col-3 */
-    .col-3-navbarInf{
-        width: 35%;
-        flex-direction: column;
-        justify-content: center;
-    }
+    
     .cont-registrate,
     .cont-login,
     .cont-carrito,

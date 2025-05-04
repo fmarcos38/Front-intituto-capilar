@@ -77,9 +77,9 @@ export const resetUsuario = () => {
 }
 
 //modifica usuario
-export const modificaUsuario = (id, data) => {
-    return async function() { console.log('data', data);
-        const resp = await axios.put(`${URL}/usuario/modifica/${id}`, data);
+export const modificaUsuario = (id, data) => {console.log("idA:",id)
+    return async function() {
+        const resp = await axios.put(`${URL}/usuario/modificarUser/${id}`, data);
         return resp.data;
     }
 }

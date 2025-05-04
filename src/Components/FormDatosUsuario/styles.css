@@ -13,58 +13,58 @@
 .cont-form-datos-usuario-tel-area,
 .cont-form-datos-usuario-calle-num-piso-depto,
 .cont-form-datos-usuario-prov-loc-cod-postal{
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
 }
 .cont-nomb,
 .cont-ape,
 .cont-dni,
-.cont-email,
-.cont-password,
-.cont-pass-viewPass,
-.cont-area,
-.cont-tel,
-.cont-calle,
-.cont-numero,
-.cont-piso,
-.cont-depto,
 .cont-cod-postal,
 .cont-prov,
-.cont-localidad{
-    width: 33.3%;
+.cont-localidad {
+    width: 31%;
+}
+.cont-email,
+.cont-passYviewPass,
+.cont-area,
+.cont-tel {
+    width: 48%;
+}
+
+.cont-calle {
+    width: 60%;
+}
+.cont-numero {
+    width: 10%;
+}
+.cont-piso,
+.cont-depto{
+    width: 10%;
+}
+.cont-passYviewPass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cont-password{
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
 }
-.cont-password{
-    width: 50%;
-}
 .cont-pass-viewPass{
     width: 100%;
+    display: flex;
     flex-direction: row;
     background-color: white;
     border-radius: 5px;
     border: 1px solid var(--gris-bordes);
 }
-.cont-email,
-.cont-area,
-.cont-tel{
-    width: 50%;
-}
-.cont-calle{
-    width: 70%;
-}
-.cont-numero{
-    width: 14%;
-}
-.cont-piso,
-.cont-depto{
-    width: 8%;
-}
+
 /* inputs */
 .input-form-usuario,
 .input-form-pass,
@@ -84,7 +84,7 @@
     background-color: white;
 }
 .cont-textarea-contacto{
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,6 +96,9 @@
 
 
 /* respon */
+@media screen and (max-width: 1000px) {
+
+}
 @media screen and (max-width: 550px) {
     .cont-form-datos-usuario-nomb-ape-dni,
     .cont-form-datos-usuario-email-pass,

@@ -115,7 +115,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                             )
                                         }
                                     </li>
-                                </ul>
+                            </ul>
                         )
                     }
                     </div>
