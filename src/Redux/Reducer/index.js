@@ -3,7 +3,8 @@ import {
     OPEN_CLOSE_MODAL, LOGIN, RESET_LOGIN, GET_USER, GET_FAVORITOS, RESET_USER,
     GET_PRODUTOS_OFERTA, GET_CARRITO, GET_PRODUCTO_POR_NOMBRE,
     GET_USER_BY_DNI,
-    MODIFICA_CONTRASEÑA
+    MODIFICA_CONTRASEÑA,
+    REGISTRARSE
 } from '../Actions/actionsTypes';
 
 const initialStore = {
@@ -23,6 +24,11 @@ const initialStore = {
 
 export default function rootReducer (state = initialStore, action) {
     switch (action.type) {
+        case REGISTRARSE: 
+        return {
+            ...state,
+            dataUsuario: action.payload
+        }
         case LOGIN:
             return {
                 ...state,

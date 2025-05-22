@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { modificaUsuario, registrarse } from '../../Redux/Actions';
 import Swal from 'sweetalert2';
 import LoginGoogle from '../LoginGoogle';
@@ -8,6 +9,7 @@ import './styles.css';
 
 function Registrarse({ operacion }) {
 
+    const usuarioLog = useSelector(state => state.dataUsuario); //datos del usuario
     const [idUser, setIdUser] = useState(''); //para mandar al back, en caso de modificar
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
@@ -26,6 +28,8 @@ function Registrarse({ operacion }) {
     const [comentarios, setComentarios] = useState('');
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
+    const navigate = useNavigate(); 
+    
     //obtengo los datos del user SI es q ya está logueado; para pre carga de la vista modificar
     const userLog = useSelector(state => state.dataUsuario);
 
@@ -205,37 +209,33 @@ function Registrarse({ operacion }) {
                     });
             } else {
                 dispatch(registrarse(data))
-                    .then((response) => {
-                        if (response?.msg === 'success') {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Registrado correctamente',
-                                timer: 1500,
-                            });
-                            limpiarCampos();
-                            window.location.href = '/login';
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: response?.data?.msg || 'Error desconocido',
-                                showConfirmButton: false,
-                                timer: 1500,
-                            });
-                        }
-                    })
-                    .catch((error) => {
-                        console.error("Error del servidor:", error.response?.data || error.message);
-                        Swal.fire({
-                            icon: 'error',
-                            title: error.response?.data?.msg || 'Error al conectar con el servidor',
-                            showConfirmButton: false,
-                            timer: 1500,
-                        });
-                    });
+                    if(usuarioLog?.message === 'ok') {
+                    navigate('/home'); //redirijo a la pagina principal
+                }
             }
         }
     };
 
+    //efecto para disparar msj de error q viene del back
+        useEffect(() => {
+            if(usuarioLog?.message === 'ok'){
+                //volver a la pagina anterior
+                window.history.back();
+            }
+            if(usuarioLog?.message === 'Email incorrecto'){
+                Swal.fire({
+                    text: 'Email incorrecto',
+                    icon: 'error'
+                });
+            }
+            if(usuarioLog?.message === 'Contraseña incorrecta'){
+                Swal.fire({
+                    text: 'Contraseña incorrecta',
+                    icon: 'error'
+                });
+            }
+        },[dispatch, usuarioLog?.message]);
+        
     /* efecto para cargar deatos del usuario para MODIFICAR */
     useEffect(() => {
         if (operacion === 'modificar') {
@@ -254,7 +254,7 @@ function Registrarse({ operacion }) {
             setProvincia(userLog.direccion.provincia);
             setLocalidad(userLog.direccion.localidad);
         }
-}, [operacion, userLog?.apellido, userLog?.direccion.calle, userLog?.direccion.codigoPostal, userLog?.direccion.depto, userLog?.direccion.localidad, userLog?.direccion.numero, userLog?.direccion.piso, userLog?.direccion.provincia, userLog?.dni, userLog?.email, userLog?.id, userLog?.nombre, userLog?.telefono.area, userLog?.telefono.numero]);
+}, [operacion, userLog?.apellido, userLog?.direccion?.calle, userLog?.direccion?.codigoPostal, userLog?.direccion?.depto, userLog?.direccion?.localidad, userLog?.direccion?.numero, userLog?.direccion?.piso, userLog?.direccion?.provincia, userLog?.dni, userLog?.email, userLog?.id, userLog?.nombre, userLog?.telefono?.area, userLog?.telefono?.numero]);
 
     return (
         <div className='cont-registrarse'>

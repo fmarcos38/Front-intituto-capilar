@@ -60,13 +60,14 @@ function Home() {
       <div className='cont-home-land-B'>
         <LandingB />
       </div>
-      {/* cartel */}
+
+      {/* menj envio... */}
       <div className='cont-msj-envio'>
         <h1 className='msj-envio'>
           ENVIOS A TODO EL PAÍS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENVIOS A TODO EL PAÍS
         </h1>
       </div>
-      
+
       {/* titulo ofertas y Lista prods en oferta*/}
       <div className='cont-ofertas-home'>
         <h2 className='titulo-ofertas'>APROVECHA NUESTRAS OFERTAS</h2>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { login, resetLogin } from '../../Redux/Actions';
 import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Swal from 'sweetalert2';
 import './styles.css';
-import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -61,7 +62,7 @@ function LoginClasico() {
             };
             dispatch(login(data));
             if(usuarioLog?.message === 'ok') {
-                navigate('/'); //redirijo a la pagina principal
+                navigate('/home'); //redirijo a la pagina principal
             }
         }
     };

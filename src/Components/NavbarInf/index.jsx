@@ -12,7 +12,7 @@ import { AppContext } from '../../Context';
 function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
     const context = useContext(AppContext);
-    const usuario = context.dataUser;
+    const usuario = context.dataUser; 
     const [muestraCambiarPass, setMuestraCambiarPass] = React.useState(false); //menu cambiar contraseña
     const [muestraMenuAdmin, setMuestraMenuAdmin] = React.useState(false); //menu admin
 
@@ -49,7 +49,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                         <img src={Logo} alt='Logo' className='logo-navbarInf' />
                     </NavLink>
                 </div>
-
+                {/* items barra */}
                 <div className='col-2-navbarInf'>
                     <ul className='ul-navbar-Inf'>
                         <li className='item-nav'>Tratamientos</li>
@@ -72,6 +72,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                         onMouseLeave={handleMouseLeaveCambiarPass}
                                     >
                                         <p className='nombreUsuario'>{usuario.user.nombre}</p>
+                                        {/* <img src={usuario.user.foto} alt='not found' className='foto-usuario' /> */}
                                         {/* menú admin */}
                                         {
                                             muestraCambiarPass && (
@@ -134,7 +135,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                     </div>
                     {/* carrito/fav */}
                     {
-                        usuario?.isAdmin === false && (
+                        usuario?.user?.isAdmin === false && (
                             <div className='cont-carrito-fav'>
                                 <div className='cont-carrito'>
                                     <p className='items-carrito'>{itemsCarrito}</p>

@@ -14,11 +14,11 @@
     align-items: center;
 }
 .titulo-landB{
-    margin: 20px 0 0 0;
+    margin: 30px 0 0 0;
     color: white;
 }
 .texto-landB-titulo{
-    width: 80%;
+    width: 85%;
     font-size: 20px;
     font-weight: 500;
     text-align: center;
@@ -104,14 +104,21 @@
         height: 75%;
     }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
     .cont-landing-B{
-        height: 700px;
+        height: auto;
     }
     .cont-titulo-landB{
-        width: 95%;
+        width: 90%;
         height: 5%;
         align-items: end;
+    }
+    .texto-landB-titulo{
+        width: 80%;
+        font-size: 17px;
+        font-weight: 500;
+        text-align: center;
+        color: white;
     }
     .titulo-landB{
         margin: 0;

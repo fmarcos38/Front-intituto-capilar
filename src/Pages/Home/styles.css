@@ -9,7 +9,6 @@
 .cont-home-land-A,
 .cont-home-land-B{
     width: 100%;
-    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,16 +20,12 @@
     justify-content: center;
     align-items: center;
     background-color: #776de1;
-    overflow: hidden; /* Oculta el desbordamiento horizontal */
-    position: relative;
 }
 .msj-envio{
-    position: relative;
     margin: 0;
     font-size: 22px;
     color: white;
     margin-left: 120px;
-    display: inline-block;
     white-space: nowrap; /* Evita que el texto se divida en varias líneas */
     overflow: hidden; /* Oculta el texto que se desborda */
     box-sizing: border-box;
@@ -129,6 +124,9 @@
     .cont-lista-ofertas{
         width: 95%;
     }
+    .titulo-ofertas{
+        margin-top: 20px;
+    }
     /* estilos filtros */
     .cont-filtros-home{
         width: 30%;
@@ -144,6 +142,7 @@
     .cont-ofertas-home{
         width: 95%;
     }
+    
     .cont-lista-ofertas{
         width: 100%;
     }
@@ -178,28 +177,7 @@
     .titulo-ofertas{
         text-align: center;
     }
-    .cont-filtros-home{
-        border-radius: 10px;
-    }
-}
-/* en combinación con landing A y B */
-@media screen and (max-width: 500px) {
-    .cont-home-land-A,
-    .cont-home-land-B {
-        width: 100%;
-        height: 700px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-@media screen and (max-width: 380px) {
-    .cont-home-land-A,
-    .cont-home-land-B {
-        width: 100%;
-        height: 630px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .cont-ofertas-home{
+        height: auto;
     }
 }

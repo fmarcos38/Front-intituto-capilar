@@ -135,6 +135,9 @@
     font-size: 14px;
     margin-right: 10px;
 }
+.foto-usuario{
+    height: 1rem;
+}
 .dropdown-menu-usuario{
     position: absolute;
     top: 99%;
@@ -158,6 +161,10 @@
 .link-navbar-usuario:hover{
     width: 100%;
     color: aliceblue;
+}
+.link-navbar{
+    color: black;
+    text-decoration: none;
 }
 
 

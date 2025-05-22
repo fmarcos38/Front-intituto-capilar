@@ -1,17 +1,23 @@
 // Login.js
 import React from "react";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { loginGoogle } from "../../Redux/Actions";
 
 
 const Login = () => {
     
+    const usuarioLog = useSelector(state => state.dataUsuario); //datos del usuario
     const dispatch = useDispatch();
+    const navigate = useNavigate(); 
 
     const handleSuccess = async (credentialResponse) => {
         const { credential } = credentialResponse;
-        dispatch(loginGoogle(credential)); 
+        dispatch(loginGoogle(credential));
+        if(usuarioLog?.message === 'ok') {
+                navigate('/home'); //redirijo a la pagina principal
+            }
     };
 
     const handleFailure = () => {

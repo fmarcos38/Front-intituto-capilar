@@ -2,7 +2,7 @@
 
 .cont-land-A{
     width: 100%;
-    height: 700px;
+    min-height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@
     background-image: url('../../Images/mujerPelo3.webp');
     background-size: cover;
     background-position: center;
-    
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
 }
 /* código para el degrade */
 .cont-land-A::before {
@@ -133,74 +133,17 @@
 
 /* responsive */
 @media screen and (max-width: 1300px) {
-    .cont-land-A{
-        width: 100%;
-        height: 630px;
-    }
     .cont-land-A::before {
-        height: 592px;
-    }
-    .cont-texto-2{
-        width: 95%;
-        justify-content: center;
-        align-items: center;
-    }
-    .p1-texto-2{
-        font-size: 90px;
-    }
-    .p2-texto-2{
-        margin-bottom: 50px;
+        height: 577px;
     }
 }
-@media screen and (max-width: 1000px) {
-    .p1-texto-1{
-        font-size: 30px;
-        margin: 0;
-        margin-bottom: 10px;
-    }
-    .p3-texto-1{
-        font-size: 20px;
-    }
-    .p1-texto-2{
-        font-size: 80px;
-    }
-    .p2-texto-2{
-        font-size: 20px;
-    }
-}
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 780px) {
     .cont-land-A{
-        width: 100%;
-        height: 630px;
-    }
-    .cont-land-A::before {
-        height: 570px;
-    }
-    .p1-texto-1{
-        font-size: 30px;
-    }
-    .p3-texto-1{
-        font-size: 20px;
-    }
-    .p1-texto-2{
-        font-size: 70px;
-    }
-    .p2-texto-2{
-        font-size: 20px;
-        margin-bottom: 30px;
-    }
-}
-@media screen and (max-width: 635px) {
-    
-    
-}
-@media screen and (max-width: 380px) {
-    .cont-land-A{
-        height: 630px;        
+        height: 650px;        
     }
     /* código para el degrade */
     .cont-land-A::before {
-        height: 630px;
+        height: 560px;
     }
     .p1-texto-2{
         font-size: 70px;
@@ -209,6 +152,30 @@
         width: 95%;
         justify-content: center;
         align-items: start;
+    }
+    .p2-texto-2{
+        width: 100%;
+        text-align: center;
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .cont-land-A::before {
+        height: 577px;
+    }
+    .p1-texto-2{
+        font-size: 50px;
+    }
+    .cont-texto-2{
+        width: 95%;
+        justify-content: center;
+        align-items: start;
+    }
+    .p1-texto-1{
+        font-size: 25px;
+    }
+    .p3-texto-1{
+        font-size: 20px;
     }
     .p2-texto-2{
         width: 100%;

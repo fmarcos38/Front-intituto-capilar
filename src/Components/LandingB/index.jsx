@@ -13,7 +13,9 @@ function LandingB() {
                 <h2 className='titulo-landB'>SOBRE NOSOTROS</h2>
                 <p className='texto-landB-titulo'>
                     "Recuperá tu cabello,  recuperá tu confianza"
-                    En el instituto capilar GAM entendemos la importancia de tener tu cabello saludable y radiante. Somos expertos en la recuperación capilar dedicamos nuestro trabajo a mejorar la salud de  tu cabello y que vuelvas a verte bien frente a un espejo.
+                    En el instituto capilar GAM entendemos la importancia de tener tu cabello saludable y radiante. 
+                    Somos expertos en la recuperación capilar dedicamos nuestro trabajo a mejorar la salud de  tu cabello y 
+                    que vuelvas a verte bien frente a un espejo.
                 </p>
                 <p className='texto-landB'>. Tratamientos personalizados para todo tipo de problemática capilar.</p>
                 <p className='texto-landB'>. Técnicas avanzadas para la recuperación del cabello.</p>
