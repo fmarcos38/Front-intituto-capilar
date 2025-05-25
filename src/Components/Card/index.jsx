@@ -59,7 +59,10 @@ function Card({id, nombre, precio, imagen, agotado, enPromo, porcentajeDescuento
                 </div>
                 {/* botón agrega al carrito */}
                 <div className='cont-btn-carrito'>
-                    <BotonAgregaalCarrito id={id} stock={stock}/>
+                    <BotonAgregaalCarrito 
+                        id={id} 
+                        stock={stock}
+                    />
                 </div>
             </div>
         </div>

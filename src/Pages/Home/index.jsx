@@ -13,12 +13,13 @@ import './styles.css';
 
 function Home() {
 
+  const usuarioLog = useSelector(state => state.dataUsuario); //datos del usuario
   const productos = useSelector((state) => state.productos);
   const totalProductos = useSelector((state) => state.totProds);
   const productosEnOferta = useSelector(state => state.enPromo); //productos en oferta
   const dispatch = useDispatch();
   const context = useContext(AppContext);
-  const data = context.dataUser;
+//  const data = context.dataUser; console.log("dataUser_LOCALSTORAGE: ", data.user.id)
   //paginación
   const [paginaActual, setPaginaActual] = React.useState(1);
   const prooductosPorPagina = 12;
@@ -44,10 +45,10 @@ function Home() {
 
   //efecto para traer carrito del usuario SI hay usuario logueado
   useEffect(() => {
-    if (data?.user?.nombre) {
-      dispatch(getCarrito(data?.user?.id));
+    if (usuarioLog?.nombre) {
+      dispatch(getCarrito(usuarioLog?.id));
     }
-  }, [data?.user?.id, data?.user?.nombre, dispatch]);
+  }, [usuarioLog?.id, usuarioLog?.nombre, dispatch]);
 
 
   return (

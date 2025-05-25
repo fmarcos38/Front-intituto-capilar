@@ -2,7 +2,7 @@
 
 .cont-land-A{
     width: 100%;
-    min-height: 700px;
+    min-height: 100lvh;
     display: flex;
     flex-direction: column;
     justify-content: center;

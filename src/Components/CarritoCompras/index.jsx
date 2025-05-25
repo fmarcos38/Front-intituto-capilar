@@ -37,7 +37,7 @@ function CarritoCompras() {
                                 productoId={p.id}
                                 nombre={p.nombre}
                                 precio={p.precio}
-                                imagenes={p.imagenes}
+                                imagen={p.imagen}
                                 stock={p.stock}
                                 enPromo={p.enPromo}
                                 porcentajeDescuento={p.porcentajeDescuento}

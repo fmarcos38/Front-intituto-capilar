@@ -52,7 +52,7 @@ function ListaOfertas({ productos }) {
                     visibleProducts?.map((producto, index) => (
                         <Card
                             key={index}
-                            id={producto.id}
+                            id={producto._id}
                             nombre={producto.nombre}
                             precio={producto.precio}
                             imagen={producto.imagen}

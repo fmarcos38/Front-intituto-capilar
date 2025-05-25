@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-
+import { AppContext } from '../../Context';
 import { NavLink } from 'react-router-dom';
 import MenuHamburguesa from '../MenuHamburguesa';
 import Logo from '../../Images/LOGO.png';
@@ -7,7 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LogoutIcon from '@mui/icons-material/Logout';
 import './styles.css';
-import { AppContext } from '../../Context';
+
 
 function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
@@ -146,7 +146,7 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                 <div className='cont-favoritos'>
                                     <p className='items-fav'>{itemsFavoritos}</p>
                                     <NavLink to='/favoritos' className='link-navbar-inf'>
-                                        <FavoriteIcon sx={{ 'fontSize': '30px' }} />
+                                        <FavoriteIcon sx={{ 'fontSize': '30px', color:'black' }} />
                                     </NavLink>
                                 </div>
                             </div>
