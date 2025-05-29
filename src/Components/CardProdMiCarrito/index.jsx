@@ -5,12 +5,12 @@ import BotonEliminaProdCarrito from '../BotoneliminaProdCarrito';
 import './styles.css';
 
 
-function CardProdMiCarrito({clienteId, productoId, nombre, precio, imagenes, stock, enPromo, porcentajeDescuento}) {
+function CardProdMiCarrito({clienteId, productoId, nombre, precio, imagen, stock, enPromo, porcentajeDescuento}) {
     
     return (
         <div className={stock === 0 ? 'cont-card-prod-mi-carrito-sin-stock' : 'cont-card-prod-mi-carrito'}>
             <div className='cont-img-card-prod-mi-carrito'>
-                <img src={imagenes[0]} alt={nombre} className='img-card-prod-mi-carrito' />
+                <img src={imagen} alt={nombre} className='img-card-prod-mi-carrito' />
             </div>
             <div className='cont-info-card-prod-mi-carrito'>
                 <div className='cont-nombre-pala-prod-mi-carrito'>

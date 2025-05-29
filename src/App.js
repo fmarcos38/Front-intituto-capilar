@@ -10,10 +10,12 @@ import Footbar from './Components/Footbar';
 import CreaProducto from './Pages/CreaProducto/CreaProducto';
 import ListaProdsAdminPage from './Pages/ListaProdsAdminPage';
 import EditaProd from './Pages/EditaProd';
-import './App.css';
 import ModificaDatosUsuario from './Pages/ModificaDatosUsuario';
-
-
+import FavoritosPage from './Pages/Favoritos';
+import MiCarritoPage from './Pages/MiCarritoPage';
+import FormaEnvio from './Pages/FormaEnvio';
+import InformacionContactoPage from './Pages/InformacionContactoPage';
+import './App.css';
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/recuperarDatosUsuario' element={<RecuperarDatosUsuario />} />
             <Route path='/modificarDatosUsuario' element={<ModificaDatosUsuario/>} />
+            <Route path='/favoritos' element={<FavoritosPage/>} />
+            <Route path='/miCarrito' element={<MiCarritoPage />} />
+            <Route path='/formaEnvio' element={<FormaEnvio/>} />
+            <Route path='/infoContacto' element={<InformacionContactoPage />} />
             {/* rutas admin */}
             <Route path='/creaProd' element={<CreaProducto/>} />
             <Route path='/listarProds' element={<ListaProdsAdminPage/>} />

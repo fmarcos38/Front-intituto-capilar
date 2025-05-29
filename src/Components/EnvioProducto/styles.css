@@ -1,0 +1,188 @@
+.cont-envio-producto{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 30px;
+}
+/* fila 1 */
+.cont-envio-producto-col-1{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    
+}
+.como-te-entregamos-la-compra,
+.cont-result-busqueda-codigo-postal{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--gris-bordes);
+    background-color: white;
+}
+.como-te-entregamos-la-compra-fila-1,
+.como-te-entregamos-la-compra-fila-2{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px solid var(--gris-bordes);
+}
+.numero1 {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(187, 186, 186);
+    border-radius: 50%;
+    font-size: 23px;
+    margin-right: 5px;
+}
+.p-texto{
+    font-size: 23px;
+}
+.como-te-entregamos-la-compra-fila-3{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.input-codigo-postal{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(187, 186, 186);
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+}
+/* result-busqda cod postal */
+.cont-result-busqueda-codigo-postal{
+    margin-top: 20px;
+}
+.cont-result-busqueda-codigo-postal-f1,
+.cont-result-busqueda-codigo-postal-f2,
+.cont-result-busqueda-codigo-postal-f3{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid var(--gris-bordes);
+    margin: 10px 0;
+    padding: 5px;
+}
+.cont-envio-producto-fila-4-f1-col-1{
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px 0 ;
+}
+.icono-transporte{
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+    border: 1px solid rgb(187, 186, 186);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.p-despacho{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+.p-transporte{
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+}
+.radio{
+    width: 20px;
+    height: 20px;
+}
+.cont-envio-producto-fila-4-f1-col-2{
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.img-correo-arg{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+/* col 2 */
+.cont-envio-producto-col-2{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+/* responsive */
+@media screen and (max-width: 952px) {
+    .cont-envio-producto{
+        width: 90%;
+        justify-content: center;
+        align-items: start;
+    }
+    .p-texto{
+        font-size: 20px;
+    }
+    .cont-envio-producto-col-1,
+    .cont-envio-producto-col-2{
+        width: 50%;
+    }
+}
+@media screen and (max-width:800px) {
+    .cont-envio-producto{
+        width: 80%;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .cont-envio-producto-col-1,
+    .cont-envio-producto-col-2{
+        width: 100%;
+    }
+    .cont-envio-producto-col-2{
+        margin-top: 10px;
+    }
+    .p-texto{
+        font-size: 18px;
+    }
+    .titulo-result-busqueda{
+        font-size: 18px;
+        text-align: center;
+    }
+}
+@media screen and (max-width:400px) {
+    .p-texto{
+        font-size: 15px;
+    }
+    .titulo-result-busqueda{
+        font-size: 15px;
+        text-align: center;
+    }
+    .icono-transporte{
+        width: 20px;
+        height: 20px;
+    }
+    .p-despacho{
+        font-size: 15px;
+    }
+    .p-transporte{
+        font-size: 12px;
+    }
+}

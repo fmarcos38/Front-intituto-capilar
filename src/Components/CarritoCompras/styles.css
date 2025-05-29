@@ -72,7 +72,7 @@
     border-radius: 10px;
     padding: 10px 0;
     cursor: pointer;
-    background-color: var(--color-azul);
+    background-color: var(--fondo-navbar);
 }
 .btn-ir-seguir-comprando{
     width: 50%;

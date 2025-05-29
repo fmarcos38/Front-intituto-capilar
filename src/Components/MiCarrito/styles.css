@@ -1,0 +1,118 @@
+.cont-miCarrito{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--gris-fondo);
+}
+/* titulo */
+.cont-titulo-miCarrito{
+    width: 80%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px solid var(--gris-bordes);
+}
+.p-titulo-mi-carrito{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.cont-msj-prod-sin-stock{
+    width: 80%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+}
+.p.mensaje-prod-sin-stock{
+    font-size: 20px;
+    color: red;
+    margin: 0;
+}
+/* fila 1 */
+.cont-miCarrito-fila-1{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 30px;
+}
+.cont-miCarrito-fila-1-col-1{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+/* fila 2 */
+.cont-miCarrito-fila-1-col-2-resumen{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.btn-volver-compra{
+    background-color: var(--fondo-navbar);
+}
+.btn-continuar-compra{
+    background-color: var(--fondo-navbar);
+}
+/* responsive */
+@media screen and (max-width: 1000px){
+    /* titulo */
+    .cont-titulo-miCarrito{
+        width: 95%;
+    }
+    .cont-miCarrito-fila-1{
+        width: 95%;
+        justify-content: space-between;
+    }
+    .cont-miCarrito-fila-1-col-1{
+        width: 58%;
+    }
+    /* fila 2 */
+    .cont-miCarrito-fila-1-col-2-resumen{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 900px){
+    .cont-miCarrito{
+        height: auto;
+    }
+    /* fila 1 */
+    .cont-miCarrito-fila-1{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .cont-miCarrito-fila-1-col-1{
+        width: 100%;
+    }
+    /* fila 2 */
+    .cont-miCarrito-fila-1-col-2-resumen{
+        width: 100%;
+    }
+}
+@media screen and (max-width:400px) {
+    .cont-miCarrito{
+        width: 100%;
+        
+    }
+    .cont-miCarrito-fila-1{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cont-miCarrito-fila-1-col-1,
+    .cont-miCarrito-fila-1-col-2-resumen{
+        width: 90%;
+    }
+}

@@ -2,6 +2,8 @@
   --fondo-page: white;
   --fondo-navbar: rgb(152, 229, 170);
   --color-fuente: white;
+  --gris-fondo: rgb(255, 255, 255);
+  --gris-bordes: grey;
 }
 
 /* estilos para los componentes Page */
