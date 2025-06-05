@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles.css'
 
 function LandingA() {
+
     return (
         <div className='cont-land-A'>
             <div className='cont-texto-1'>

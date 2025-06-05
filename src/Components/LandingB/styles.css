@@ -1,21 +1,22 @@
 .cont-landing-B{
     width: 100%;
-    height: 100lvh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--fondo-navbar);
+    background-image: radial-gradient(circle at 50% -20.71%, #8bff79 0, #6eff80 16.67%, #4bf787 33.33%, #0ced8c 50%, #00e291 66.67%, #00d995 83.33%, #00d09a 100%);;
 }
 .cont-texto-Y-img-landB{
-    width: 90vw;
+    width: 90%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .titulo-landB{
-    margin: 45px 0 0 0;
+    margin: 40px 0 0 0;
     color: black;
 }
 .texto-landB-titulo{
@@ -24,6 +25,7 @@
     font-weight: 500;
     text-align: center;
     color: black;
+    margin: 3px;
 }
 .texto-landB{
     width: 80%;
