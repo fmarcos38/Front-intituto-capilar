@@ -9,7 +9,7 @@
 /* estilos para los componentes Page */
 .page{
   width: 100%;
-  min-height: 90vh;
+  min-height: 100lvh;
   display: flex;
   flex-direction: column;
   align-items: center;

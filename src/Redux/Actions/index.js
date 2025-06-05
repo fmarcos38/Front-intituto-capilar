@@ -4,7 +4,6 @@ import {
     LOADING, GET_PRODUCTOS, GET_PRODUCTO_BY_ID, RESET_PRODUCTO, GET_PRODS_RANGO_PRECIO, 
     OPEN_CLOSE_MODAL, LOGIN, GET_FAVORITOS, GET_USER, RESET_USER, GET_PRODUTOS_OFERTA,
     GET_CARRITO, GET_PRODUCTO_POR_NOMBRE, GET_USER_BY_DNI,
-    REGISTRARSE,
 } from "./actionsTypes";
 
 //-------usuario-----------------------------s
@@ -42,7 +41,7 @@ export const loginGoogle = (credential) => {
 export const registrarse = (data) => {
     return async function(dispatch) { 
         const resp = await axios.post(`${URL}/registrarse`, data);
-        dispatch({type: REGISTRARSE, payload: resp.data});
+        return resp.data;
     }
 }
 

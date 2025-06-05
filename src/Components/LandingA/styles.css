@@ -2,7 +2,8 @@
 
 .cont-land-A{
     width: 100%;
-    min-height: 100lvh;
+    height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,10 +20,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 700px;
+    height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-    pointer-events: none; /* Permite hacer clic a través del pseudo-elemento */
+    pointer-events: none;
+    /* z-index: 1; */
 }
+/* contenido dentro  z-index: 2; para estar encima del degrade  */
+/* .cont-land-A > * {
+    z-index: 2; 
+} */
 .cont-texto-1{
     width: 90%;
     height: 70%;
@@ -160,9 +166,7 @@
     }
 }
 @media screen and (max-width: 500px) {
-    .cont-land-A::before {
-        height: 577px;
-    }
+    
     .p1-texto-2{
         font-size: 50px;
     }

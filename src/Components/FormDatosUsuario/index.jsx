@@ -5,7 +5,7 @@ import './styles.css';
 function FormDatosUsuario({ 
   nombre, apellido, email, password, dni, area, numTel, calle, 
   numero, piso, depto, codigoPostal, provincia, localidad, 
-  comentarios, errors, onClickVerContraseña, handleChange, handleSubmit, registrarse, operacion 
+  comentarios, errors, onClickVerContraseña, handleChange, handleSubmit, operacion 
 }) {
 
   return (
@@ -58,7 +58,7 @@ function FormDatosUsuario({
                   {errors.password && <p style={{margin: '0 0 0 5px', fontSize:'10px', color:'red'}}>{errors.password}</p>}
                 </div>
                 <div className='cont-pass-viewPass'>
-                  <input type="password" id='password' value={password} onChange={handleChange} error={errors.password} className='input-form-usuario' />
+                  <input type="password" id='password' value={password} onChange={handleChange} error={errors.password} className='input-form-pass' />
                   <button type='button' className='btn-viewPass' onClick={onClickVerContraseña}>
                     <VisibilityIcon />
                   </button>

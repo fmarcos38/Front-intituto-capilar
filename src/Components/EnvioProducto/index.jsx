@@ -6,10 +6,11 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 //import imgCorreoArg from '../../imagenes/delivery_correoargentino.png';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ResumenCompra from '../ResumenCompra';
+import MopedIcon from '@mui/icons-material/Moped';
 import './styles.css';
 
 function EnvioProducto() {
-    const cliente = userData(); console.log('cliente', cliente);
+    const cliente = userData(); 
     const carrito = useSelector(state => state.carrito);
     const dispatch = useDispatch();
 
@@ -17,6 +18,7 @@ function EnvioProducto() {
         window.location.href = '/';
     };
 
+    //trae usuario y su carrito
     useEffect(() => {
         if (cliente?.user.id) {
             dispatch(getUsuarioById(cliente?.user.id));
@@ -31,24 +33,9 @@ function EnvioProducto() {
                 <div className="cont-envio-producto-col-1">
                     <div className="como-te-entregamos-la-compra">
                         <div className="como-te-entregamos-la-compra-fila-1">
-                            <p className="numero1">1</p>
                             <p className="p-texto">¿COMO TE ENTREGAMOS LA COMPRA?</p>
                         </div>
-                        <div className="como-te-entregamos-la-compra-fila-2">
-                            <div style={{ width: '50%', display: 'flex', justifyContent: 'start', alignItems: 'center' }}>
-                                <p>INGRESÁ TU CÓDIGO POSTAL</p>
-                            </div>
-                            <div style={{ width: '50%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
-                                <button className="btn-calcular-envio">Buscar código</button>
-                            </div>
-                        </div>
-                        <div className="como-te-entregamos-la-compra-fila-3">
-                            <input type="text" className="input-codigo-postal" />
-                        </div>
-                    </div>
-
-                    <div className="cont-result-busqueda-codigo-postal">
-                        <h3 className="titulo-result-busqueda">Encontramos las siguientes opciones disponibles:</h3>
+                        
                         <div className="cont-result-busqueda-codigo-postal-f1">
                             <div className="cont-envio-producto-fila-4-f1-col-1">
                                 <LocalShippingIcon className="icono-transporte" />
@@ -64,11 +51,10 @@ function EnvioProducto() {
 
                         <div className="cont-result-busqueda-codigo-postal-f2">
                             <div className="cont-envio-producto-fila-4-f1-col-1">
-                                {/* <img src={imgCorreoArg} alt="" className="img-correo-arg" /> */}
+                                <MopedIcon className="icono-transporte" />
                                 <div className="cont-p-despacho-Y-tranporte">
-                                    <p className="p-despacho">A Domicilio - Standar</p>
-                                    <p className="p-transporte">Costo de envío ${ }</p>
-                                    <p className="p-transporte">A partir del despacho { } días hábiles</p>
+                                    <p className="p-despacho">A Domicilio </p>
+                                    <p className="p-transporte">Solo Mar del Plata </p>
                                 </div>
                             </div>
                             <div className="cont-envio-producto-fila-4-f1-col-2">

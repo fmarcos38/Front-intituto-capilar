@@ -72,7 +72,6 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                                         onMouseLeave={handleMouseLeaveCambiarPass}
                                     >
                                         <p className='nombreUsuario'>{usuario.user.nombre}</p>
-                                        {/* <img src={usuario.user.foto} alt='not found' className='foto-usuario' /> */}
                                         {/* menú admin */}
                                         {
                                             muestraCambiarPass && (

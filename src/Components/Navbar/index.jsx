@@ -37,7 +37,9 @@ function Navbar() {
     };
 
     useEffect(() => {
-        dispatch(getUsuarioById(usuarioLog?.user.id));
+        if(usuarioLog?.user?.id) {
+            dispatch(getUsuarioById(usuarioLog?.user?.id));
+        }
     }, [dispatch, usuarioLog?.user.id]);
     
     //efecto para cambiar el color de la navbar al hacer scroll

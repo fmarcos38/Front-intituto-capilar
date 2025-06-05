@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCarrito, getUsuarioById, modificaUsuario } from '../../Redux/Actions';
 import { userData } from '../../localStorage';
 import ResumenCompra from '../ResumenCompra';
-import CheckIcon from '@mui/icons-material/Check';
 import FormDatosUsuario from '../FormDatosUsuario';
 import Swal from 'sweetalert2';
 import './styles.css';
@@ -181,49 +180,29 @@ function InformacionContacto() {
 
     return (
         <div className='cont-miCarrito'>
-            {/* <NavCarrito /> */}
-            <div className='cont-envio-producto modoColumna'>
+            <div className="cont-envio-producto">
                 <div className='cont-envio-producto-col-1 modoColumna'>
-                    <div className='como-te-entregamos-la-compra'>
-                        <div className='como-te-entregamos-la-compra-fila-1'>
-                            <p className='numero1'>
-                                <CheckIcon style={{ fontSize: 20, color: 'green' }} />
-                            </p>
-                            <p className='p-texto'>¿COMO TE ENTREGAMOS LA COMPRA?</p>
-                        </div>
-                        {/* <div className='como-te-entregamos-la-compra-fila-1'>
-                                    <p className='numero1'>
-                                        <CheckIcon style={{ fontSize: 20, color: 'green' }} />
-                                    </p>
-                                    <p className='p-texto'>¿COMO QUERES PAGAR?</p>
-                                </div> */}
-                    </div>
-
-                    {/* formulario de contacto para la entrega */}
-                    <div>
-                        <p className='titulo-datos-usuario'>Datos de contacto</p>
-                        <p className='subtitulo-datos-usuario'>Completa los siguientes campos para que podamos contactarte</p>
-                        <FormDatosUsuario
-                            nombre={nombre}
-                            apellido={apellido}
-                            dni={dni}
-                            email={email}
-                            area={area}
-                            numTel={numTel}
-                            calle={calle}
-                            numero={numero}
-                            piso={piso}
-                            depto={depto}
-                            codigoPostal={codigoPostal}
-                            provincia={provincia}
-                            localidad={localidad}
-                            comentarios={comentarios}
-                            errors={errors}
-                            handleChange={handleChange}
-                            handleSubmit={handleSubmit}
-                            registrarse={false}
-                        />
-                    </div>
+                    <p className="p-texto">Completa los siguientes campos para que podamos contactarte</p>
+                    <FormDatosUsuario
+                        nombre={nombre}
+                        apellido={apellido}
+                        dni={dni}
+                        email={email}
+                        area={area}
+                        numTel={numTel}
+                        calle={calle}
+                        numero={numero}
+                        piso={piso}
+                        depto={depto}
+                        codigoPostal={codigoPostal}
+                        provincia={provincia}
+                        localidad={localidad}
+                        comentarios={comentarios}
+                        errors={errors}
+                        handleChange={handleChange}
+                        handleSubmit={handleSubmit}
+                        registrarse={false}
+                    />
                 </div>
 
                 <div className='cont-envio-producto-col-2 modoColumna'>

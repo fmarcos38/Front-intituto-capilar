@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { modificaUsuario, registrarse } from '../../Redux/Actions';
 import Swal from 'sweetalert2';
 import LoginGoogle from '../LoginGoogle';
@@ -28,7 +27,6 @@ function Registrarse({ operacion }) {
     const [comentarios, setComentarios] = useState('');
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
-    const navigate = useNavigate(); 
     
     //obtengo los datos del user SI es q ya está logueado; para pre carga de la vista modificar
     const userLog = useSelector(state => state.dataUsuario);
@@ -209,9 +207,33 @@ function Registrarse({ operacion }) {
                     });
             } else {
                 dispatch(registrarse(data))
-                    if(usuarioLog?.message === 'ok') {
-                    navigate('/home'); //redirijo a la pagina principal
-                }
+                .then((response) => {
+                    if (response?.message === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Registrado correctamente',
+                            timer: 1500,
+                        });
+                        limpiarCampos();
+                        window.location.href = '/login';
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: response?.data?.message || 'Error desconocido',
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error del servidor:", error.response?.data || error.message);
+                    Swal.fire({
+                        icon: 'error',
+                        title: error.response?.data?.msg || 'Error al conectar con el servidor',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                });
             }
         }
     };

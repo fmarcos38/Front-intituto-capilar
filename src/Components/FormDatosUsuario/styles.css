@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid var(--gris-bordes);
+    border-radius: 5px;
     background-color: rgb(233, 233, 235);
 }
 .cont-form-datos-usuario-nomb-ape-dni,
