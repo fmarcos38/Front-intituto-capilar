@@ -9,7 +9,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import './styles.css';
 
 
-function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
+function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
     const context = useContext(AppContext);
     const usuario = context.dataUser; 
@@ -41,7 +41,12 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
             <div className='sub-cont-navbarInf'>
                 {/* menú hamburg */}
                 <div className='col-1-navbarInf'>
-                    <MenuHamburguesa  usuario={usuario} isOpen={isOpen} handleLogOut={handleLogOut}/>
+                    <MenuHamburguesa  
+                        usuario={usuario} 
+                        isOpen={isOpen} 
+                        setIsOpen={setIsOpen}
+                        handleLogOut={handleLogOut}
+                    />
                 </div>
                 {/* logo */}
                 <div className='col-2-logo-navbarInf'>
@@ -52,104 +57,112 @@ function NavbarInf({isOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
                 {/* items barra */}
                 <div className='col-2-navbarInf'>
                     <ul className='ul-navbar-Inf'>
-                        <li className='item-nav'>Tratamientos</li>
-                        <li className='item-nav'>Productos</li>
-                        <li className='item-nav'>Testimonios</li>
-                        <li className='item-nav'>Nosotros</li>
-                        <li className='item-nav'>Contacto</li>
+                        <NavLink to={'/tratamientos'} className={'link-barra'}>
+                            <li className='item-nav'>Tratamientos</li>
+                        </NavLink>
+                        <NavLink to={'/productos'} className={'link-barra'}>
+                            <li className='item-nav'>Productos</li>
+                        </NavLink>
+                        <NavLink to={'/nosotros'} className={'link-barra'}>
+                            <li className='item-nav'>Nosotros</li>
+                        </NavLink>
+                        <NavLink to={'/contacto'} className={'link-barra'}>
+                            <li className='item-nav'>Contacto</li>
+                        </NavLink>
                     </ul>
                 </div>
 
                 {/* regist, log, carrito, fav */}
                 <div className='col-3-navbarInf'>
-                    <div className='cont-registrate'>
-                        {
-                            usuario?.user?.nombre ?
-                                <ul className='ul-nav-med'>
-                                    <li
-                                        className='navbar-item-admin'
-                                        onMouseEnter={handleMouseEnterCambiarPass}
-                                        onMouseLeave={handleMouseLeaveCambiarPass}
-                                    >
-                                        <p className='nombreUsuario'>{usuario.user.nombre}</p>
-                                        {/* menú admin */}
-                                        {
-                                            muestraCambiarPass && (
-                                                <ul className='dropdown-menu-usuario'>
-                                                    <li className='dropdown-item-admin'>
-                                                        <NavLink to='/modificarDatosUsuario' className='link-navbar-usuario'>
-                                                            Cambiar contraseña
-                                                        </NavLink>
-                                                    </li>
-                                                </ul>
-                                            )
-                                        }
-                                    </li>
-                                </ul>
-                                :
-                                <NavLink to='/registrarse' className='link-navbar'>Registrate</NavLink>
-                        }
-                    </div>
-                    {/* menú Admin */}
-                    <div className='cont-registrate'>
                     {
-                        usuario?.user?.isAdmin && (
-                            <ul className='ul-nav-med'>
-                                    <li
-                                        className='navbar-item-admin'
-                                        onMouseEnter={handleMouseEnterAdmin}
-                                        onMouseLeave={handleMouseLeaveAdmin}
-                                    >
-                                        <p className='nombreUsuario'>Admin</p>
-                                        {/* menú admin */}
-                                        {
-                                            muestraMenuAdmin  && (
-                                                <ul className='dropdown-menu-admin'>
-                                                    <li className='dropdown-item-admin'>
-                                                        <NavLink to='/creaProd' className='link-navbar-usuario'>Crear producto</NavLink>
-                                                    </li>
-                                                    <li className='dropdown-item-admin'>
-                                                        <NavLink to='/listarProds' className='link-navbar-usuario'>Listar productos</NavLink>
-                                                    </li>
-                                                </ul>
-                                            )
-                                        }
-                                    </li>
-                            </ul>
-                        )
-                    }
-                    </div>
-                    {/* iniciar ses */}
-                    <div className='cont-login'>
-                        {
-                            usuario?.user?.nombre ?
-                                <button
-                                    onClick={() => { handleLogOut() }}
-                                    style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}
-                                >
-                                    <LogoutIcon sx={{ 'fontSize': '30px' }} />
-                                </button> :
-                                <NavLink to='/login' className='link-navbar'>Iniciar sesión</NavLink>
-                        }
-                    </div>
-                    {/* carrito/fav */}
-                    {
-                        usuario?.user?.isAdmin === false && (
-                            <div className='cont-carrito-fav'>
-                                <div className='cont-carrito'>
-                                    <p className='items-carrito'>{itemsCarrito}</p>
-                                    <button type='button' onClick={handleOnClickCarrito} className='btn-carrito'>
-                                        <ShoppingCartIcon sx={{ 'fontSize': '30px' }} />
-                                    </button>
+                        !usuario?.user?.nombre ?
+                            <div className='cont-opc-userNoLog'>
+                                <div className='cont-registrate'>
+                                    <NavLink to='/registrarse' className='link-navbar'>Registrate</NavLink>
                                 </div>
-                                <div className='cont-favoritos'>
-                                    <p className='items-fav'>{itemsFavoritos}</p>
-                                    <NavLink to='/favoritos' className='link-navbar-inf'>
-                                        <FavoriteIcon sx={{ 'fontSize': '30px', color:'black' }} />
-                                    </NavLink>
+                                {/* Login */}
+                                <div className='cont-login'>
+                                    <NavLink to='/login' className='link-navbar'>Login</NavLink>
                                 </div>
                             </div>
-                        )
+                            :
+                            <div className='cont-opc-userLog'>
+                                {/* Nombre user */}
+                                <div className='cont-NombreUser'>
+                                    {
+                                        <>
+                                            <p
+                                                className='nombreUsuario'
+                                                onMouseEnter={handleMouseEnterCambiarPass}
+                                                onMouseLeave={handleMouseLeaveCambiarPass}
+                                            >
+                                                {usuario.user.nombre}
+                                            </p>
+
+                                            {
+                                                muestraCambiarPass && (
+                                                    <ul className='dropdown-menu-usuario'>
+                                                        <li className='dropdown-item-admin'>
+                                                            <NavLink to='/modificarDatosUsuario' className='link-navbar-usuario'>
+                                                                Cambiar contraseña
+                                                            </NavLink>
+                                                        </li>
+                                                    </ul>
+                                                )
+                                            }
+                                        </>
+                                    }
+                                </div>
+                                {/* carrito/fav */}
+                                <div className='cont-carrito-fav'>
+                                    <div className='cont-carrito'>
+                                        <p className='items-carrito'>{itemsCarrito}</p>
+                                        <button type='button' onClick={handleOnClickCarrito} className='btn-carrito'>
+                                            <ShoppingCartIcon sx={{ 'fontSize': '30px' }} />
+                                        </button>
+                                    </div>
+                                    <div className='cont-favoritos'>
+                                        <p className='items-fav'>{itemsFavoritos}</p>
+                                        <NavLink to='/favoritos' className='link-navbar-inf'>
+                                            <FavoriteIcon sx={{ 'fontSize': '30px', color: 'black' }} />
+                                        </NavLink>
+                                    </div>
+                                </div>
+                                {/*Menú Admin */}
+                                <div className='cont-menuAdmin'>
+                                    <ul className='ul-nav-med'>
+                                        <li
+                                            className='navbar-item-admin'
+                                            onMouseEnter={handleMouseEnterAdmin}
+                                            onMouseLeave={handleMouseLeaveAdmin}
+                                        >
+                                            <p className='nombreUsuario'>Admin</p>
+                                            {/* menú admin */}
+                                            {
+                                                muestraMenuAdmin && (
+                                                    <ul className='dropdown-menu-admin'>
+                                                        <li className='dropdown-item-admin'>
+                                                            <NavLink to='/creaProd' className='link-navbar-usuario'>Crear producto</NavLink>
+                                                        </li>
+                                                        <li className='dropdown-item-admin'>
+                                                            <NavLink to='/listarProds' className='link-navbar-usuario'>Listar productos</NavLink>
+                                                        </li>
+                                                    </ul>
+                                                )
+                                            }
+                                        </li>
+                                    </ul>
+                                </div>
+                                {/* LogOut */}
+                                <div className='cont-LogOut'>
+                                    <button
+                                        onClick={() => { handleLogOut() }}
+                                        style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}
+                                    >
+                                        <LogoutIcon sx={{ 'fontSize': '30px' }} />
+                                    </button>
+                                </div>
+                            </div>
                     }
                 </div>
             </div>

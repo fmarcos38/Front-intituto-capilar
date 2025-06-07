@@ -17,6 +17,9 @@ function Navbar() {
     const favoritos = useSelector(state => state.favoritos); //favoritos para obtener cantidad de productos  
     const dispatch = useDispatch();
     
+    const handleOnClickOpenMenu = () => {
+        setIsOpen(!isOpen);
+    }
 
     //logout
     const handleLogOut = () => {
@@ -68,6 +71,7 @@ function Navbar() {
             <NavbarInf
                 usuario={usuario}
                 isOpen={isOpen}
+                setIsOpen={setIsOpen}
                 handleLogOut={handleLogOut}
                 itemsCarrito={carrito.productos?.length}
                 itemsFavoritos={favoritos?.length}

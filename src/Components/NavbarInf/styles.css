@@ -24,6 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: blue;
 }
 .navlink-navbarInf{
     width: 100%;
@@ -42,14 +43,21 @@
 }
 /* col-2 */
 .col-2-navbarInf{
-    width: 55%;
+    width: 65%;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
 }
 .ul-navbar-Inf{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.link-barra{
+    text-decoration: none;
 }
 .item-nav{
     list-style: none;
@@ -59,23 +67,42 @@
 }
 /* col-3 */
 .col-3-navbarInf{
-    width: 30%;
+    width: 25%;
     height: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    background-color: blueviolet;
 }
-.cont-registrate,
-.cont-login,
-.cont-carrito,
-.cont-favoritos{
-    width: 25%;
+.cont-opc-userNoLog,
+.cont-opc-userLog {
+    width: 90%;
     height: 100%;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.cont-registrate,
+.cont-login{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-NombreUser{
+
+}
+.cont-carrito-fav{
+
+}
+.cont-menuAdmin{
+
+}
+.cont-LogOut{
+
+}
+
 .navbar-item-admin{
     height: 100%;
     display: flex;
@@ -162,12 +189,6 @@
     width: 100%;
     color: aliceblue;
 }
-.link-navbar{
-    color: black;
-    text-decoration: none;
-}
-
-
 
 /* responsive */
 @media screen and (max-width: 1200px) {
@@ -260,24 +281,32 @@
     /* col-1 */
     .col-1-navbarInf{
         width: 10%;
+        background-color: bisque;
+    }
+    .sub-cont-navbarInf {
+        width: 98%;
     }
     /* col-2-logo-navbarInf */
-    .col-2-logo-navbarInf{
-        width: 35%;
+    .col-2-navbarInf{
+        width: 60%;
+        justify-content: center;
+        align-items: center;
     }
     .logo-navbarInf{
         height: 45px;
-        top: -20px; 
-        left: 65%;
         border-radius: 10px;
     }
-    /* col-3 */
-    
+    /* col-3 */    
+    .col-3-navbarInf{
+        width: 30%;
+    }
     .cont-registrate,
-    .cont-login,
-    .cont-carrito,
-    .cont-favoritos{
-        width: 100%;
+    .cont-login{
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .link-navbar{
         font-size: 12px;

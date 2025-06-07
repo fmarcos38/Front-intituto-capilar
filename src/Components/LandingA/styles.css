@@ -144,12 +144,14 @@
     }
 }
 @media screen and (max-width: 780px) {
-    .cont-land-A{
-        height: 650px;        
+    .cont-land-A {
+        width: 100%;
+        height: 100svh; /* o 100dvh si querés que cambie dinámicamente */
+        
     }
-    /* código para el degrade */
-    .cont-land-A::before {
-        height: 560px;
+    .cont-land-A::before{
+        width: 100svh;
+        height: 100svh; /* o 100dvh si querés que cambie dinámicamente */
     }
     .p1-texto-2{
         font-size: 70px;
@@ -166,6 +168,15 @@
     }
 }
 @media screen and (max-width: 500px) {
+    .cont-land-A {
+        width: 100svh;
+        height: 100svh; /* o 100dvh si querés que cambie dinámicamente */
+        margin-top: 80px;
+    }
+    .cont-land-A::before{
+        width: 100svh;
+        height: 100svh; /* o 100dvh si querés que cambie dinámicamente */
+    }
     .p1-texto-2{
         font-size: 50px;
     }
