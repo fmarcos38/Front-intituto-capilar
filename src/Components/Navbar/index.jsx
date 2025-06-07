@@ -8,8 +8,8 @@ import NavbarInf from '../NavbarInf';
 import './styles.css';
 
 function Navbar() {
-    const usuarioLog = userData(); //usuario loguedo
-    const usuario = useSelector(state => state.dataUsuario); //usuario logueado
+    //const usuarioLog = userData(); //usuario loguedo
+    //const usuario = useSelector(state => state.dataUsuario); //usuario logueado
     // eslint-disable-next-line no-unused-vars
     const [isOpen, setIsOpen] = React.useState(false); //menu hamburguesa  
     const [scrolled, setScrolled] = useState(false); //estado para cambiar el color de la navbar al hacer scroll
@@ -35,11 +35,7 @@ function Navbar() {
         });
     };
 
-    useEffect(() => {
-        if(usuarioLog?.user?.id) {
-            dispatch(getUsuarioById(usuarioLog?.user?.id));
-        }
-    }, [dispatch, usuarioLog?.user.id]);
+    
     
     //efecto para cambiar el color de la navbar al hacer scroll
     useEffect(() => {
@@ -65,7 +61,6 @@ function Navbar() {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <NavbarSup />
             <NavbarInf
-                usuario={usuario}
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
                 handleLogOut={handleLogOut}

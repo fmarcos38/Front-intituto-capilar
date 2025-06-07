@@ -8,7 +8,7 @@ import {
 
 //-------usuario-----------------------------s
 //-------login-----------------------------
-//login clasico
+// ACTION login clasico
 export const login = (data) => {
     return async function(dispatch) {
         const resp = await axios.post(`${URL}/auth/login`, data); 

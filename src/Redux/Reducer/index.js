@@ -1,10 +1,8 @@
 import { 
     LOADING, GET_PRODUCTOS, GET_PRODUCTO_BY_ID, RESET_PRODUCTO, GET_PRODS_RANGO_PRECIO, 
     OPEN_CLOSE_MODAL, LOGIN, RESET_LOGIN, GET_USER, GET_FAVORITOS, RESET_USER,
-    GET_PRODUTOS_OFERTA, GET_CARRITO, GET_PRODUCTO_POR_NOMBRE,
-    GET_USER_BY_DNI,
-    MODIFICA_CONTRASEÑA,
-    REGISTRARSE
+    GET_PRODUTOS_OFERTA, GET_CARRITO, GET_PRODUCTO_POR_NOMBRE, GET_USER_BY_DNI,
+    MODIFICA_CONTRASEÑA, REGISTRARSE,
 } from '../Actions/actionsTypes';
 
 const initialStore = {
@@ -37,7 +35,7 @@ export default function rootReducer (state = initialStore, action) {
         case RESET_LOGIN:
             return {
                 ...state,
-                dataUsuario: null,
+                login: null,
             }
         case LOADING:
             return {

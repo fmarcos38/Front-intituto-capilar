@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../Context';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import MenuHamburguesa from '../MenuHamburguesa';
 import Logo from '../../Images/LOGO.png';
@@ -12,7 +13,8 @@ import './styles.css';
 function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
     const context = useContext(AppContext);
-    const usuario = context.dataUser; 
+    //const usuario = context.dataUser;
+    const usuario = useSelector(state => state.dataUsuario); //usuario logueado 
     const [muestraCambiarPass, setMuestraCambiarPass] = React.useState(false); //menu cambiar contraseña
     const [muestraMenuAdmin, setMuestraMenuAdmin] = React.useState(false); //menu admin
 
@@ -130,28 +132,33 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                                 </div>
                                 {/*Menú Admin */}
                                 <div className='cont-menuAdmin'>
-                                    <ul className='ul-nav-med'>
-                                        <li
-                                            className='navbar-item-admin'
-                                            onMouseEnter={handleMouseEnterAdmin}
-                                            onMouseLeave={handleMouseLeaveAdmin}
-                                        >
-                                            <p className='nombreUsuario'>Admin</p>
-                                            {/* menú admin */}
-                                            {
-                                                muestraMenuAdmin && (
-                                                    <ul className='dropdown-menu-admin'>
-                                                        <li className='dropdown-item-admin'>
-                                                            <NavLink to='/creaProd' className='link-navbar-usuario'>Crear producto</NavLink>
-                                                        </li>
-                                                        <li className='dropdown-item-admin'>
-                                                            <NavLink to='/listarProds' className='link-navbar-usuario'>Listar productos</NavLink>
-                                                        </li>
-                                                    </ul>
-                                                )
-                                            }
-                                        </li>
-                                    </ul>
+                                    {
+                                        usuario?.user?.isAdmin &&
+                                        <>
+                                            <ul className='ul-nav-med'>
+                                                <li
+                                                    className='navbar-item-admin'
+                                                    onMouseEnter={handleMouseEnterAdmin}
+                                                    onMouseLeave={handleMouseLeaveAdmin}
+                                                >
+                                                    <p className='nombreUsuario'>Admin</p>
+                                                    {/* menú admin */}
+                                                    {
+                                                        muestraMenuAdmin && (
+                                                            <ul className='dropdown-menu-admin'>
+                                                                <li className='dropdown-item-admin'>
+                                                                    <NavLink to='/creaProd' className='link-navbar-usuario'>Crear producto</NavLink>
+                                                                </li>
+                                                                <li className='dropdown-item-admin'>
+                                                                    <NavLink to='/listarProds' className='link-navbar-usuario'>Listar productos</NavLink>
+                                                                </li>
+                                                            </ul>
+                                                        )
+                                                    }
+                                                </li>
+                                            </ul>
+                                        </>
+                                    }
                                 </div>
                                 {/* LogOut */}
                                 <div className='cont-LogOut'>

@@ -15,7 +15,6 @@ export const AppProvider = ({ children }) => {
     const onClickCarrito = () => {
         setCarritoModal(!carritoModal);
     };
-    
 
     //efecto para verificar si hay usuario logueado
     useEffect(() => {
