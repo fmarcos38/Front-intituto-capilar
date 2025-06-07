@@ -24,7 +24,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
 }
 .navlink-navbarInf{
     width: 100%;
@@ -33,9 +32,7 @@
     align-items: center;
 }
 .logo-navbarInf{
-    height: 70px;
-    position: absolute;
-    top: 0px;    
+    height: 5rem;   
 }
 .logo-navbarInf:hover{
     cursor: pointer;
@@ -48,7 +45,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
 }
 .ul-navbar-Inf{
     width: 100%;
@@ -72,7 +68,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
 }
 .cont-opc-userNoLog,
 .cont-opc-userLog {
@@ -90,19 +85,6 @@
     align-items: center;
     background-color: aqua;
 }
-/* .cont-NombreUser{
-
-}
-.cont-carrito-fav{
-
-}
-.cont-menuAdmin{
-
-}
-.cont-LogOut{
-
-} */
-
 .navbar-item-admin{
     height: 100%;
     display: flex;
@@ -177,29 +159,9 @@
 
 /* responsive */
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 800px) {
     .sub-cont-navbarInf{
         width: 100%;
-        justify-content: space-between;
-        align-items: center;
-    }
-    /* col-1 */
-    .col-1-navbarInf{
-        width: 5%;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    /* col-2-logo-navbarInf */
-    .col-2-logo-navbarInf{
-        width: 60%;
-    }
-    .logo-navbarInf{
-        height: 45px;
-        top: -20px; 
-        left: 65%;
-        border-radius: 10px;
     }
     .navlink-navbarInf{
         position: relative;
@@ -208,9 +170,20 @@
         justify-content: center;
         align-items: center;
     }
+    .logo-navbarInf{
+        height: 2.5rem;
+        border-radius: 5px;
+    }
     /* col-2 */
     .col-2-navbarInf{
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ul-navbar-Inf{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     /* col-3 */
     .col-3-navbarInf{
@@ -220,20 +193,26 @@
         align-items: center;
     }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 680px) {
+    .sub-cont-navbarInf{
+        width: 90%;
+        justify-content: space-between;
+    }
     /* col-1 */
     .col-1-navbarInf{
-        width: 10%;
-        background-color: bisque;
+        width: 30%;
+        display: flex;
+        justify-content: start;
     }
     .sub-cont-navbarInf {
         width: 98%;
     }
     /* col-2-logo-navbarInf */
     .col-2-navbarInf{
-        width: 60%;
-        justify-content: center;
-        align-items: center;
+        display: none;
+    }
+    .col-2-logo-navbarInf{
+        width: 40%;
     }
     .logo-navbarInf{
         height: 45px;
@@ -253,5 +232,18 @@
     }
     .link-navbar{
         font-size: 12px;
+    }
+}
+@media screen and (max-width: 520px) {
+    /* col-1 */
+    .col-1-navbarInf{
+        width: 40%;
+    }
+    .col-2-logo-navbarInf{
+        width: 20%;
+    }
+    /* col-3 */    
+    .col-3-navbarInf{
+        width: 40%;
     }
 }

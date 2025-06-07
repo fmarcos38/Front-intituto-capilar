@@ -72,7 +72,7 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                     </ul>
                 </div>
 
-                {/* regist, log, carrito, fav */}
+                {/* regist, log, carrito, fav, logout */}
                 <div className='col-3-navbarInf'>
                     {
                         !usuario?.user?.nombre ?
@@ -159,7 +159,7 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                                         onClick={() => { handleLogOut() }}
                                         style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}
                                     >
-                                        <LogoutIcon sx={{ 'fontSize': '30px' }} />
+                                        <LogoutIcon sx={{ 'fontSize': '20px' }} />
                                     </button>
                                 </div>
                             </div>
