@@ -16,10 +16,6 @@ function Navbar() {
     const carrito = useSelector(state => state.carrito); //carrito para obtener cantidad de productos
     const favoritos = useSelector(state => state.favoritos); //favoritos para obtener cantidad de productos  
     const dispatch = useDispatch();
-    
-    const handleOnClickOpenMenu = () => {
-        setIsOpen(!isOpen);
-    }
 
     //logout
     const handleLogOut = () => {

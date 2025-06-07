@@ -77,9 +77,6 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                     {
                         !usuario?.user?.nombre ?
                             <div className='cont-opc-userNoLog'>
-                                <div className='cont-registrate'>
-                                    <NavLink to='/registrarse' className='link-navbar'>Registrate</NavLink>
-                                </div>
                                 {/* Login */}
                                 <div className='cont-login'>
                                     <NavLink to='/login' className='link-navbar'>Login</NavLink>
@@ -90,43 +87,46 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                                 {/* Nombre user */}
                                 <div className='cont-NombreUser'>
                                     {
-                                        <>
-                                            <p
-                                                className='nombreUsuario'
-                                                onMouseEnter={handleMouseEnterCambiarPass}
-                                                onMouseLeave={handleMouseLeaveCambiarPass}
-                                            >
-                                                {usuario.user.nombre}
-                                            </p>
-
+                                        <ul className='ul-nav-med'>
+                                        <li
+                                            className='navbar-item-admin'
+                                            onMouseEnter={handleMouseEnterCambiarPass}
+                                            onMouseLeave={handleMouseLeaveCambiarPass}
+                                        >
+                                            <p className='nombreUsuario'>{usuario?.user?.nombre}</p>
+                                            {/* menú admin */}
                                             {
                                                 muestraCambiarPass && (
-                                                    <ul className='dropdown-menu-usuario'>
+                                                    <ul className='dropdown-menu-admin'>
                                                         <li className='dropdown-item-admin'>
-                                                            <NavLink to='/modificarDatosUsuario' className='link-navbar-usuario'>
-                                                                Cambiar contraseña
-                                                            </NavLink>
+                                                            <NavLink to='/modificarDatosUsuario' className='link-navbar-usuario'>Cambiar contraseña</NavLink>
                                                         </li>
                                                     </ul>
                                                 )
                                             }
-                                        </>
+                                        </li>
+                                    </ul>
                                     }
                                 </div>
                                 {/* carrito/fav */}
                                 <div className='cont-carrito-fav'>
-                                    <div className='cont-carrito'>
-                                        <p className='items-carrito'>{itemsCarrito}</p>
-                                        <button type='button' onClick={handleOnClickCarrito} className='btn-carrito'>
-                                            <ShoppingCartIcon sx={{ 'fontSize': '30px' }} />
-                                        </button>
-                                    </div>
-                                    <div className='cont-favoritos'>
-                                        <p className='items-fav'>{itemsFavoritos}</p>
-                                        <NavLink to='/favoritos' className='link-navbar-inf'>
-                                            <FavoriteIcon sx={{ 'fontSize': '30px', color: 'black' }} />
-                                        </NavLink>
-                                    </div>
+                                    {
+                                        !usuario?.user?.isAdmin &&
+                                        <>
+                                            <div className='cont-carrito'>
+                                                <p className='items-carrito'>{itemsCarrito}</p>
+                                                <button type='button' onClick={handleOnClickCarrito} className='btn-carrito'>
+                                                    <ShoppingCartIcon sx={{ 'fontSize': '30px' }} />
+                                                </button>
+                                            </div>
+                                            <div className='cont-favoritos'>
+                                                <p className='items-fav'>{itemsFavoritos}</p>
+                                                <NavLink to='/favoritos' className='link-navbar-inf'>
+                                                    <FavoriteIcon sx={{ 'fontSize': '30px', color: 'black' }} />
+                                                </NavLink>
+                                            </div>
+                                        </>
+                                    }
                                 </div>
                                 {/*Menú Admin */}
                                 <div className='cont-menuAdmin'>

@@ -82,15 +82,15 @@
     justify-content: center;
     align-items: center;
 }
-.cont-registrate,
 .cont-login{
-    width: 45%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: aqua;
 }
-.cont-NombreUser{
+/* .cont-NombreUser{
 
 }
 .cont-carrito-fav{
@@ -101,7 +101,7 @@
 }
 .cont-LogOut{
 
-}
+} */
 
 .navbar-item-admin{
     height: 100%;
@@ -113,7 +113,7 @@
 .dropdown-menu-admin{
     position: absolute;
     top: 99%;
-    right: -40px;    
+    right: 170px;    
     list-style: none;
     margin: 0;
     padding: 5px;
@@ -165,21 +165,6 @@
 .foto-usuario{
     height: 1rem;
 }
-.dropdown-menu-usuario{
-    position: absolute;
-    top: 99%;
-    right: -20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 150px;
-    color: black;
-    background-color: var(--fondo-navbar);
-    z-index: 1000;
-}
 .link-navbar-usuario{
     color: black;
     font-size: 14px;
@@ -191,49 +176,7 @@
 }
 
 /* responsive */
-@media screen and (max-width: 1200px) {
-    .sub-cont-navbarInf{
-        width: 95%;
-        justify-content: start;
-        align-items: center;
-    }
-    /* col-2-logo-navbarInf */
-    .col-2-logo-navbarInf{
-        width: 8%;
-    }
-    .logo-navbarInf{
-        height: 70px;
-        position: absolute;
-        top: 0px;    
-    }
-    /* col de items */
-    .col-2-navbarInf{
-        width: 70%;
-        height: 50px;
-    }
-    .ul-navbar-Inf{
-        width: 100%;
-    }
-    .item-nav{
-        width: 100%;
-        display: flex;
-        justify-content: start;
-        font-size: 12px;
-        margin: 0;
-    }
-    .col-3-navbarInf{
-        width: 22%;
-    }
-    /* col-3 */
-    .cont-registrate,
-    .cont-login{
-        width: 50%;
-    }
-    /* tamaño de la palabra reg y iniciar ses */
-    .link-navbar{
-        font-size: 13px;
-    }
-}
+
 @media screen and (max-width: 790px) {
     .sub-cont-navbarInf{
         width: 100%;
