@@ -78,9 +78,9 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                         !usuario?.user?.nombre ?
                             <div className='cont-opc-userNoLog'>
                                 {/* Login */}
-                                <div className='cont-login'>
-                                    <NavLink to='/login' className='link-navbar'>Login</NavLink>
-                                </div>
+                                <NavLink to='/login' className='link-navbar'>
+                                        <p className='p-login-navbar'>Login</p>
+                                    </NavLink>
                             </div>
                             :
                             <div className='cont-opc-userLog'>
