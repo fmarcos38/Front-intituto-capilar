@@ -57,11 +57,22 @@
     justify-content: start;
     align-items: start;
 }
+.cont-btns-continuar-volver{
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(159, 108, 206);
+}
 .btn-volver-compra{
+    width: 48%;
+    font-size: 15px;
     background-color: var(--fondo-navbar);
 }
 .btn-continuar-compra{
-    background-color: var(--fondo-navbar);
+    width: 48%;
+    font-size: 15px;
+    color: black;
+    background-color: rgb(245, 243, 243);
 }
 /* responsive */
 @media screen and (max-width: 1000px){

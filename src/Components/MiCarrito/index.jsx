@@ -30,6 +30,11 @@ function MiCarrito() {
         window.history.back();
     }
 
+    //efecto para iniciar la Pag desd la parte SUPERIOR
+    useEffect(() => {
+        window.scrollTo(0, 0); // Desplaza la página hacia la parte superior cuando el componente se monta
+    }, []);
+
     useEffect(() => {
             if (cliente.id) {
                 dispatch(getUsuarioById(cliente.id));
@@ -80,7 +85,12 @@ function MiCarrito() {
                     />
                     {/* btns continuar y volver */}
                     <div className='cont-btns-continuar-volver'>
-                        <button onClick={handleClickVolver} className='btn-volver-compra'>Seguir comprando</button>
+                        <button 
+                            className='btn-volver-compra'
+                            onClick={handleClickVolver} 
+                        >
+                            Seguir comprando
+                        </button>
                         <a href='/formaEnvio' className='btn-continuar-compra'>Continuar</a>
                     </div>
                 </div>

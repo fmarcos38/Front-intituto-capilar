@@ -9,11 +9,12 @@
 /* estilos para los componentes Page */
 .page{
   width: 100%;
-  min-height: 100lvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
+  margin-top: 90px;
   background-color: var(--gris-fondo);
 }
 /* botnes para los Carruseles */

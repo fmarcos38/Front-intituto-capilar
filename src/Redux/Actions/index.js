@@ -4,6 +4,7 @@ import {
     LOADING, GET_PRODUCTOS, GET_PRODUCTO_BY_ID, RESET_PRODUCTO, GET_PRODS_RANGO_PRECIO, 
     OPEN_CLOSE_MODAL, LOGIN, GET_FAVORITOS, GET_USER, RESET_USER, GET_PRODUTOS_OFERTA,
     GET_CARRITO, GET_PRODUCTO_POR_NOMBRE, GET_USER_BY_DNI,
+    MODIFICA_CARRITO,
 } from "./actionsTypes";
 
 //-------usuario-----------------------------s
@@ -119,16 +120,24 @@ export const getCarrito = (id) => {
     }
 }
 //agrega al carrito
-export const agregarAlCarrito = (clienteId, id, cantidad) => {
+export const agregarAlCarrito = (clienteId, id, cantidad, precio) => {
     const productoId = id;
     return async function(dispatch) {
-        await axios.put(`${URL}/carrito/agregar/${clienteId}`, {productoId, cantidad});
+        await axios.put(`${URL}/carrito/agregar/${clienteId}`, {productoId, cantidad, precio});
         // Después de agregar, obtener el carrito actualizado
         const resp = await axios.get(`${URL}/carrito/${clienteId}`);
         dispatch({ type: GET_CARRITO, payload: resp.data });
     }
 }
-
+//modif carrito
+export const modificaCarrito = (clienteId, envio) => {
+    return async function (dispatch) { console.log("data: ", envio);
+        await axios.put(`${URL}/carrito/modifica/${clienteId}`, {envio});
+        // Después de modif, obtener el carrito actualizado
+        const resp = await axios.get(`${URL}/carrito/${clienteId}`);
+        dispatch({type: MODIFICA_CARRITO, payload: resp.data});
+    }
+};
 //elimina del carrito
 export const eliminarDelCarrito = (clienteId) => { 
     return async function(dispatch) {

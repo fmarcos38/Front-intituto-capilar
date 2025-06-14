@@ -62,6 +62,9 @@ function Card({id, nombre, precio, imagen, agotado, enPromo, porcentajeDescuento
                     <BotonAgregaalCarrito 
                         id={id} 
                         stock={stock}
+                        precio={precio}
+                        enPromo={enPromo}
+                        porcentajeDescuento={porcentajeDescuento}
                     />
                 </div>
             </div>

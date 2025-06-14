@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { logOut, userData} from '../../localStorage';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUsuarioById } from '../../Redux/Actions';
+import { logOut} from '../../localStorage';
+import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import NavbarSup from '../NavbarSup';
 import NavbarInf from '../NavbarInf';
@@ -15,7 +14,7 @@ function Navbar() {
     const [scrolled, setScrolled] = useState(false); //estado para cambiar el color de la navbar al hacer scroll
     const carrito = useSelector(state => state.carrito); //carrito para obtener cantidad de productos
     const favoritos = useSelector(state => state.favoritos); //favoritos para obtener cantidad de productos  
-    const dispatch = useDispatch();
+    
 
     //logout
     const handleLogOut = () => {
@@ -35,8 +34,6 @@ function Navbar() {
         });
     };
 
-    
-    
     //efecto para cambiar el color de la navbar al hacer scroll
     useEffect(() => {
         const handleScroll = () => {

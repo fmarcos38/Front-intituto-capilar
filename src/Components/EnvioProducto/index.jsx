@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCarrito, getUsuarioById } from '../../Redux/Actions';
+import { getCarrito, getUsuarioById, modificaCarrito } from '../../Redux/Actions';
 import { userData } from '../../localStorage';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 //import imgCorreoArg from '../../imagenes/delivery_correoargentino.png';
@@ -12,10 +12,16 @@ import './styles.css';
 function EnvioProducto() {
     const cliente = userData(); 
     const carrito = useSelector(state => state.carrito);
+    const [envio, setEnvio] = useState('');
     const dispatch = useDispatch();
 
     const handleClickVolver = () => {
         window.location.href = '/';
+    };
+    const handleCheckEnvio = (e) => {
+        setEnvio(e.target.value);
+        const clienteId = cliente.user.id;
+        dispatch(modificaCarrito(clienteId, envio));
     };
 
     //trae usuario y su carrito
@@ -45,7 +51,14 @@ function EnvioProducto() {
                                 </div>
                             </div>
                             <div className="cont-envio-producto-fila-4-f1-col-2">
-                                <input type="radio" className="radio" />
+                                <input 
+                                    type="radio" 
+                                    name='transporte' 
+                                    value={envio} 
+                                    onChange={handleCheckEnvio}
+                                    checked={envio === "transporte"}
+                                    className="radio" 
+                                />
                             </div>
                         </div>
 
@@ -58,7 +71,14 @@ function EnvioProducto() {
                                 </div>
                             </div>
                             <div className="cont-envio-producto-fila-4-f1-col-2">
-                                <input type="radio" className="radio" />
+                                <input 
+                                    type="radio" 
+                                    name='domicilio' 
+                                    value={envio} 
+                                    onChange={handleCheckEnvio}
+                                    checked={envio === "domicilio"}
+                                    className="radio" 
+                                />
                             </div>
                         </div>
 
@@ -67,12 +87,19 @@ function EnvioProducto() {
                                 <LocationOnIcon className="icono-transporte" />
                                 <div className="cont-p-despacho-Y-tranporte">
                                     <p className="p-despacho">Retiro personalmente</p>
-                                    <p className="p-transporte">Av Idpendencia 2121</p>
+                                    <p className="p-transporte">Castelli 2537</p>
                                     <p className="p-transporte" style={{ color: 'green' }}>Gratis</p>
                                 </div>
                             </div>
                             <div className="cont-envio-producto-fila-4-f1-col-2">
-                                <input type="radio" className="radio" />
+                                <input 
+                                    type="radio" 
+                                    name='retira' 
+                                    value={envio} 
+                                    onChange={handleCheckEnvio}
+                                    checked={envio === "retira"}
+                                    className="radio" 
+                                />
                             </div>
                         </div>
                     </div>
