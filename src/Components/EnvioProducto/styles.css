@@ -120,6 +120,17 @@
     justify-content: start;
     align-items: start;
 }
+.falta-envio {
+    pointer-events: none;
+    /* evita el click */
+    background-color: #ccc;
+    /* color gris */
+    color: #666;
+    /* texto más apagado */
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
 /* responsive */
 @media screen and (max-width: 952px) {
     .cont-envio-producto{

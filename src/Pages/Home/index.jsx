@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductos, getProductosEnOferta, getCarrito } from '../../Redux/Actions';
+import { getProductos, getProductosEnOferta } from '../../Redux/Actions';
 import { AppContext } from '../../Context';
 import LandingA from '../../Components/LandingA';
 import LandingB from '../../Components/LandingB';
@@ -13,7 +13,6 @@ import './styles.css';
 
 function Home() {
 
-  const usuarioLog = useSelector(state => state.dataUsuario); //datos del usuario
   const productos = useSelector((state) => state.productos);
   const totalProductos = useSelector((state) => state.totProds);
   const productosEnOferta = useSelector(state => state.enPromo); //productos en oferta
@@ -42,13 +41,6 @@ function Home() {
   useEffect(() => {
     dispatch(getProductos(limit, offset,));
   }, [dispatch, limit,offset]);
-
-  //efecto para traer carrito del usuario SI hay usuario logueado
-  useEffect(() => {
-    if (usuarioLog?.nombre) {
-      dispatch(getCarrito(usuarioLog?.id));
-    }
-  }, [usuarioLog?.id, usuarioLog?.nombre, dispatch]);
 
 
   return (

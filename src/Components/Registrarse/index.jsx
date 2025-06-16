@@ -93,8 +93,10 @@ function Registrarse({ operacion }) {
             inputContraseña.type = 'password';
         }
     }
+    //valida los datos
     const validar = () => {
         let campos = {};
+
         if (operacion === 'modificar') {
             campos = {
                 nombre,
@@ -108,8 +110,9 @@ function Registrarse({ operacion }) {
                 codigoPostal,
                 provincia,
                 localidad,
-            }
-        }else{
+                comentarios
+            };
+        } else {
             campos = {
                 nombre,
                 apellido,
@@ -123,11 +126,16 @@ function Registrarse({ operacion }) {
                 codigoPostal,
                 provincia,
                 localidad,
-            }
+                comentarios
+            };
         }
 
         const nuevosErrores = Object.entries(campos).reduce((acc, [key, value]) => {
-            if (!value || String(value).trim() === '') {
+            if (
+                value === undefined ||
+                value === null ||
+                (typeof value === 'string' && value.trim() === '')
+            ) {
                 acc[key] = ` es requerido.`;
             }
             return acc;
@@ -136,6 +144,7 @@ function Registrarse({ operacion }) {
         setErrors(nuevosErrores);
         return Object.keys(nuevosErrores).length === 0;
     };
+
     //limpio los campos
     const limpiarCampos = () => {
         setNombre('');
@@ -186,7 +195,7 @@ function Registrarse({ operacion }) {
                                 timer: 1500,
                             });
                             limpiarCampos();
-                            window.location.href = '/home';
+                            /* window.location.href = '/home'; */
                         } else {
                             Swal.fire({
                                 icon: 'error',
@@ -239,25 +248,25 @@ function Registrarse({ operacion }) {
     };
 
     //efecto para disparar msj de error q viene del back
-        useEffect(() => {
-            if(usuarioLog?.message === 'ok'){
-                //volver a la pagina anterior
-                window.history.back();
-            }
-            if(usuarioLog?.message === 'Email incorrecto'){
-                Swal.fire({
-                    text: 'Email incorrecto',
-                    icon: 'error'
-                });
-            }
-            if(usuarioLog?.message === 'Contraseña incorrecta'){
-                Swal.fire({
-                    text: 'Contraseña incorrecta',
-                    icon: 'error'
-                });
-            }
-        },[dispatch, usuarioLog?.message]);
-        
+    useEffect(() => {
+        if (usuarioLog?.message === 'ok') {
+            //volver a la pagina anterior
+            window.history.back();
+        }
+        if (usuarioLog?.message === 'Email incorrecto') {
+            Swal.fire({
+                text: 'Email incorrecto',
+                icon: 'error'
+            });
+        }
+        if (usuarioLog?.message === 'Contraseña incorrecta') {
+            Swal.fire({
+                text: 'Contraseña incorrecta',
+                icon: 'error'
+            });
+        }
+    }, [dispatch, usuarioLog?.message]);
+
     /* efecto para cargar deatos del usuario para MODIFICAR */
     useEffect(() => {
         if (operacion === 'modificar') {

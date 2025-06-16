@@ -129,12 +129,12 @@ export const agregarAlCarrito = (clienteId, id, cantidad, precio) => {
         dispatch({ type: GET_CARRITO, payload: resp.data });
     }
 }
-//modif carrito
+//modif carrito para asignar/cambiar forma de envio/entrega
 export const modificaCarrito = (clienteId, envio) => {
-    return async function (dispatch) { console.log("data: ", envio);
+    return async function (dispatch) {
         await axios.put(`${URL}/carrito/modifica/${clienteId}`, {envio});
         // Después de modif, obtener el carrito actualizado
-        const resp = await axios.get(`${URL}/carrito/${clienteId}`);
+        const resp = await axios.get(`${URL}/carrito/modifica/${clienteId}`);
         dispatch({type: MODIFICA_CARRITO, payload: resp.data});
     }
 };

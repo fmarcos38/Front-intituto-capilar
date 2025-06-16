@@ -74,6 +74,10 @@
     color: black;
     background-color: rgb(245, 243, 243);
 }
+.cont-btn_atras{
+    width: 102%;
+    margin-top: 10px;
+}
 /* responsive */
 @media screen and (max-width: 1000px){
     /* titulo */

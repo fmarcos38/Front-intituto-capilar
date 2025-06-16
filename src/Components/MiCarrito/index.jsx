@@ -5,6 +5,7 @@ import { userData } from '../../localStorage';
 import WarningIcon from '@mui/icons-material/Warning';
 import CardProdMiCarrito from '../CardProdMiCarrito' 
 import ResumenCompra from '../ResumenCompra';
+import BotonVolver from '../BtnVolverAtrasCarrito/btnVolverAtrasCarrito';
 import './styles.css';
 
 function MiCarrito() {
@@ -92,6 +93,9 @@ function MiCarrito() {
                             Seguir comprando
                         </button>
                         <a href='/formaEnvio' className='btn-continuar-compra'>Continuar</a>
+                    </div>
+                    <div className='cont-btn_atras'>
+                        <BotonVolver />
                     </div>
                 </div>
             </div>

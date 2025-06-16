@@ -1,4 +1,6 @@
 import React, { createContext, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getCarrito, getUsuarioById } from '../Redux/Actions';
 //creo el contexto
 export const AppContext = createContext();
 
@@ -8,9 +10,7 @@ export const AppProvider = ({ children }) => {
     const [dataUser, setDataUser] = React.useState({}); //estado data user
     const [carritoModal, setCarritoModal] = React.useState(false); //estado modal carrito
     const [recuperaDatosModal, setRecuperaDatosModal] = React.useState(false); //estado modal recupera datos
-    
-    const marcas = ['Nox', 'Bullpadel', 'Wilson', 'Head',]; //arreglo de marcas
-    const categorias = ['Paletas', 'Pelotas', 'Zapatillas', 'Bolsos']; //arreglo de categorías
+    const dispatch = useDispatch();
 
     const onClickCarrito = () => {
         setCarritoModal(!carritoModal);
@@ -23,12 +23,17 @@ export const AppProvider = ({ children }) => {
             setDataUser(data);
         }
     }, []);
-    
+    //efecto para cargar en estado global usuario logueado, y traer su carrito
+    useEffect(() => {
+        if(dataUser?.user){
+            dispatch(getUsuarioById(dataUser?.user?.id));
+            dispatch(getCarrito(dataUser?.user?.id));
+        }
+    }, [dataUser, dataUser?.user?.id, dispatch]);
+
     return (
         <AppContext.Provider value={{
             dataUser,
-            marcas,
-            categorias,
             carritoModal,
             onClickCarrito,
             recuperaDatosModal,

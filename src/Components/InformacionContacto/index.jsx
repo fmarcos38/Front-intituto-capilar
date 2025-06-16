@@ -5,6 +5,7 @@ import { userData } from '../../localStorage';
 import ResumenCompra from '../ResumenCompra';
 import FormDatosUsuario from '../FormDatosUsuario';
 import Swal from 'sweetalert2';
+import BotonVolver from '../BtnVolverAtrasCarrito/btnVolverAtrasCarrito';
 import './styles.css';
 
 function InformacionContacto() {
@@ -62,7 +63,7 @@ function InformacionContacto() {
             case 'piso':
                 setPiso(value);
                 break;
-            case 'departamento':
+            case 'depto':
                 setDepto(value);
                 break;
             case 'codigoPostal':
@@ -100,8 +101,12 @@ function InformacionContacto() {
         };
 
         const nuevosErrores = Object.entries(campos).reduce((acc, [key, value]) => {
-            if (!value || value.trim() === '') {
-                acc[key] = `El campo ${key} es requerido.`;
+            if (
+                value === undefined ||
+                value === null ||
+                (typeof value === 'string' && value.trim() === '')
+            ) {
+                acc[key] = ` es requerido.`;
             }
             return acc;
         }, {});
@@ -128,7 +133,7 @@ function InformacionContacto() {
                     localidad,
                 },
                 comentarios,
-            }); console.log("data:",data);
+            }); 
             dispatch(modificaUsuario(cliente.id, data))
             .then((resp) => {
                 if(resp.msg === 'success'){
@@ -180,9 +185,9 @@ function InformacionContacto() {
 
     return (
         <div className='cont-miCarrito'>
+            <h1 className="p-texto-titulo-infoC">Verificá que tus datos sean los correctos</h1>
             <div className="cont-envio-producto">
-                <div className='cont-envio-producto-col-1 modoColumna'>
-                    <p className="p-texto">Completa los siguientes campos para que podamos contactarte</p>
+                <div className='cont-envio-producto-col-1'>
                     <FormDatosUsuario
                         nombre={nombre}
                         apellido={apellido}
@@ -201,7 +206,7 @@ function InformacionContacto() {
                         errors={errors}
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
-                        registrarse={false}
+                        operacion={'modificar'}
                     />
                 </div>
 
@@ -211,6 +216,9 @@ function InformacionContacto() {
                     <div className='cont-btns-continuar-volver'>
                         <button type='button' onClick={handleClickVolver} className='btn-volver-compra'>Seguir comprando</button>
                         <a href='/checkout' className='btn-continuar-compra'>Continuar</a>
+                    </div>
+                    <div className='cont-btn_atras'>
+                        <BotonVolver />
                     </div>
                 </div>
             </div>

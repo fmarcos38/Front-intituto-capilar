@@ -1,37 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCarrito, getUsuarioById, modificaCarrito } from '../../Redux/Actions';
+import { modificaCarrito } from '../../Redux/Actions';
 import { userData } from '../../localStorage';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 //import imgCorreoArg from '../../imagenes/delivery_correoargentino.png';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ResumenCompra from '../ResumenCompra';
 import MopedIcon from '@mui/icons-material/Moped';
+import Swal from 'sweetalert2';
+import BotonVolver from '../BtnVolverAtrasCarrito/btnVolverAtrasCarrito';
 import './styles.css';
 
 function EnvioProducto() {
     const cliente = userData(); 
     const carrito = useSelector(state => state.carrito);
-    const [envio, setEnvio] = useState('');
+    const [envio, setEnvio] = useState(''); 
     const dispatch = useDispatch();
 
     const handleClickVolver = () => {
         window.location.href = '/';
     };
-    const handleCheckEnvio = (e) => {
-        setEnvio(e.target.value);
-        const clienteId = cliente.user.id;
-        dispatch(modificaCarrito(clienteId, envio));
+    const handleOnChangeEnvio = (e) => {
+        const nuevoEnvio = e.target.value;
+        setEnvio(nuevoEnvio);
+    };
+    const handleOnClickContinuar = (e) => {
+        e.preventDefault(); // evita que el botón actúe como submit o cambie de página
+
+        const clienteId = cliente?.user?.id;
+
+        if (envio) {
+            dispatch(modificaCarrito(clienteId, envio));
+            window.location.href = "/infoContacto"; // navegamos manualmente
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Falta seleccionar el método de entrega',
+                text: 'Por favor, elegí uno',
+                confirmButtonText: 'Entendido'
+            });
+        }
     };
 
-    //trae usuario y su carrito
-    useEffect(() => {
-        if (cliente?.user.id) {
-            dispatch(getUsuarioById(cliente?.user.id));
-            dispatch(getCarrito(cliente?.user.id));
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch]);
 
     return (
         <div className="cont-miCarrito">
@@ -53,9 +63,9 @@ function EnvioProducto() {
                             <div className="cont-envio-producto-fila-4-f1-col-2">
                                 <input 
                                     type="radio" 
-                                    name='transporte' 
-                                    value={envio} 
-                                    onChange={handleCheckEnvio}
+                                    name='envio' 
+                                    value="transporte" 
+                                    onChange={(e)=>{handleOnChangeEnvio(e)}}
                                     checked={envio === "transporte"}
                                     className="radio" 
                                 />
@@ -73,9 +83,9 @@ function EnvioProducto() {
                             <div className="cont-envio-producto-fila-4-f1-col-2">
                                 <input 
                                     type="radio" 
-                                    name='domicilio' 
-                                    value={envio} 
-                                    onChange={handleCheckEnvio}
+                                    name='envio' 
+                                    value="domicilio" 
+                                    onChange={(e)=>{handleOnChangeEnvio(e)}}
                                     checked={envio === "domicilio"}
                                     className="radio" 
                                 />
@@ -94,9 +104,9 @@ function EnvioProducto() {
                             <div className="cont-envio-producto-fila-4-f1-col-2">
                                 <input 
                                     type="radio" 
-                                    name='retira' 
-                                    value={envio} 
-                                    onChange={handleCheckEnvio}
+                                    name='envio' 
+                                    value='retira' 
+                                    onChange={(e)=>{handleOnChangeEnvio(e)}}
                                     checked={envio === "retira"}
                                     className="radio" 
                                 />
@@ -110,7 +120,16 @@ function EnvioProducto() {
                     <div className="cont-btns-continuar-volver">
                         <button onClick={handleClickVolver} className="btn-volver-compra">Seguir comprando</button>
                         {/* <a href="/comoPagar" className="btn-continuar-compra">Continuar</a> */}
-                        <a href="/infoContacto" className="btn-continuar-compra">Continuar</a>
+                        <button
+                            onClick={handleOnClickContinuar}
+                            className="btn-continuar-compra"
+                        >
+                            Continuar
+                        </button>
+
+                    </div>
+                    <div className='cont-btn_atras'>
+                        <BotonVolver />
                     </div>
                 </div>
             </div>
