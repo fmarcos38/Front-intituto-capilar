@@ -16,6 +16,7 @@ import MiCarritoPage from './Pages/MiCarritoPage';
 import FormaEnvio from './Pages/FormaEnvio';
 import InformacionContactoPage from './Pages/InformacionContactoPage';
 import './App.css';
+import Checkout from './Components/CheckOutML';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path='/miCarrito' element={<MiCarritoPage />} />
             <Route path='/formaEnvio' element={<FormaEnvio/>} />
             <Route path='/infoContacto' element={<InformacionContactoPage />} />
+            <Route path='/checkout' element={<Checkout />}/>
             {/* rutas admin */}
             <Route path='/creaProd' element={<CreaProducto/>} />
             <Route path='/listarProds' element={<ListaProdsAdminPage/>} />
