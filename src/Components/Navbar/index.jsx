@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { logOut} from '../../localStorage';
-import { useSelector } from 'react-redux';
+import { userData, logOut} from '../../localStorage';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCarrito, getFavoritos, getUsuarioById } from '../../Redux/Actions';
 import Swal from 'sweetalert2';
 import NavbarSup from '../NavbarSup';
 import NavbarInf from '../NavbarInf';
 import './styles.css';
 
 function Navbar() {
-    //const usuarioLog = userData(); //usuario loguedo
-    //const usuario = useSelector(state => state.dataUsuario); //usuario logueado
-    // eslint-disable-next-line no-unused-vars
+    const usuarioLog = userData(); //usuario loguedo
+    const usuario = useSelector(state => state.dataUsuario); //usuario logueado
     const [isOpen, setIsOpen] = React.useState(false); //menu hamburguesa  
     const [scrolled, setScrolled] = useState(false); //estado para cambiar el color de la navbar al hacer scroll
     const carrito = useSelector(state => state.carrito); //carrito para obtener cantidad de productos
     const favoritos = useSelector(state => state.favoritos); //favoritos para obtener cantidad de productos  
-    
-
+    const dispatch = useDispatch();
     //logout
     const handleLogOut = () => {
         Swal.fire({
@@ -54,10 +53,19 @@ function Navbar() {
         };
     }, []);
 
+    useEffect(() => {
+        if (usuarioLog?.user?.id) {
+            dispatch(getUsuarioById(usuarioLog.user.id));
+            dispatch(getCarrito(usuarioLog.user.id));
+            dispatch(getFavoritos(usuarioLog.user.id));
+        }
+    }, [usuarioLog?.user?.id, dispatch]);
+
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <NavbarSup />
             <NavbarInf
+                usuario={usuario}
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
                 handleLogOut={handleLogOut}

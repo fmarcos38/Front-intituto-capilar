@@ -12,7 +12,7 @@ function LoginPage() {
     }, []); // El array vacío asegura que se ejecute solo al montar el componente
 
     return (
-        <div className='cont-login-page page'>
+        <div className='cont-login-page'>
             <div className='cont-login-clasico-page'>
                 <LoginClasico />
             </div>

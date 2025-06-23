@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../Context';
-//import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import MenuHamburguesa from '../MenuHamburguesa';
 import Logo from '../../Images/LOGO.png';
@@ -10,11 +9,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import './styles.css';
 
 
-function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
+function NavbarInf({usuario, isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavoritos=0}) {
 
     const context = useContext(AppContext);
-    const usuario = context.dataUser;
-    //const usuario = useSelector(state => state.dataUsuario); //usuario logueado 
     const [muestraCambiarPass, setMuestraCambiarPass] = React.useState(false); //menu cambiar contraseña
     const [muestraMenuAdmin, setMuestraMenuAdmin] = React.useState(false); //menu admin
 
@@ -77,7 +74,7 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                 {/* regist, log, carrito, fav, logout */}
                 <div className='col-3-navbarInf'>
                     {
-                        !usuario?.user?.nombre ?
+                        !usuario?.nombre ?
                             <div className='cont-opc-userNoLog'>
                                 {/* Login */}
                                 <NavLink to='/login' className='link-navbar'>
@@ -95,7 +92,7 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                                             onMouseEnter={handleMouseEnterCambiarPass}
                                             onMouseLeave={handleMouseLeaveCambiarPass}
                                         >
-                                            <p className='nombreUsuario'>{usuario?.user?.nombre}</p>
+                                            <p className='nombreUsuario'>{usuario?.nombre}</p>
                                             {/* menú admin */}
                                             {
                                                 muestraCambiarPass && (
@@ -113,7 +110,7 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                                 {/* carrito/fav */}
                                 <div className='cont-carrito-fav'>
                                     {
-                                        !usuario?.user?.isAdmin &&
+                                        !usuario?.isAdmin &&
                                         <>
                                             <div className='cont-carrito'>
                                                 <p className='items-carrito'>{itemsCarrito}</p>
@@ -133,7 +130,7 @@ function NavbarInf({isOpen, setIsOpen, handleLogOut, itemsCarrito=0, itemsFavori
                                 {/*Menú Admin */}
                                 <div className='cont-menuAdmin'>
                                     {
-                                        usuario?.user?.isAdmin &&
+                                        usuario?.isAdmin &&
                                         <>
                                             <ul className='ul-nav-med'>
                                                 <li
